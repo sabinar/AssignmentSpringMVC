@@ -61,7 +61,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${deviceList}" var="person">
+                    <c:forEach items="${deviceList}" var="device">
                         <tr>
                             <td>${device.phoneNumber}</td>
                             <td>${device.operatingSystem}</td>
