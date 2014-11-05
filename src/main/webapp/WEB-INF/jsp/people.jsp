@@ -44,6 +44,8 @@
                 <form:input path="firstName" />
                 <form:label path="lastName">Last Name</form:label>
                 <form:input path="lastName" />
+                <form:label path="email">Email</form:label>
+                <form:input path="email" />
                 <input type="submit" value="Add Person" class="btn"/>
             </form:form>
 
