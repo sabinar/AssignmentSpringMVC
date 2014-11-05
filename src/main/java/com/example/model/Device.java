@@ -20,7 +20,7 @@ public class Device {
 	private Integer operatingSystem;
 	
 	@ManyToOne
-	@JoinColumn(name="person_id")
+	@JoinColumn(name="id")
 	private Person person;
 
 	public Integer getId() {

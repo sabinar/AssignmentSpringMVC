@@ -15,7 +15,6 @@ public class Person {
 
     @Id
     @GeneratedValue
-    @Column(name="PERSON_ID")
     private Integer id;
 
     private String firstName;
