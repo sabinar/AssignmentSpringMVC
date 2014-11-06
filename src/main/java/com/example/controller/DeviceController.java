@@ -14,6 +14,7 @@ import com.example.service.DeviceService;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/device")
 public class DeviceController {
 
     @Autowired
