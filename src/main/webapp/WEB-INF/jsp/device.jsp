@@ -44,7 +44,8 @@
                 <form:input path="phoneNumber" />
                 <form:label path="operatingSystem">Operating System</form:label>
                 <form:input path="operatingSystem" />
-                
+                <form:label path="id">User Id</form:label>
+                <form:input path="id" />
                 <input type="submit" value="Add Device" class="btn"/>
             </form:form>
 
