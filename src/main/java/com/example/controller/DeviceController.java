@@ -30,7 +30,7 @@ public class DeviceController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addDevice(@ModelAttribute("Device") Device device, BindingResult result) {
+    public String addDevice(@ModelAttribute("device") Device device, BindingResult result) {
 
     	//Integer userId = device.getPerson()
         deviceService.addDevice(device);
