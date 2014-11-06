@@ -30,17 +30,18 @@ public class DeviceController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addDevice(@ModelAttribute("Device") Device Device, BindingResult result) {
+    public String addDevice(@ModelAttribute("Device") Device device, BindingResult result) {
 
-        deviceService.addDevice(Device);
+    	//Integer userId = device.getPerson()
+        deviceService.addDevice(device);
 
         return "redirect:/device/";
     }
 
-    @RequestMapping("/delete/{DeviceId}")
-    public String deleteDevice(@PathVariable("DeviceId") Integer DeviceId) {
+    @RequestMapping("/delete/{deviceId}")
+    public String deleteDevice(@PathVariable("deviceId") Integer deviceId) {
 
-        deviceService.removeDevice(DeviceId);
+        deviceService.removeDevice(deviceId);
 
         return "redirect:/device/";
     }
