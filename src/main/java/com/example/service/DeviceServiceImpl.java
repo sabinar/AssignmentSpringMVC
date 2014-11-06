@@ -38,12 +38,12 @@ public class DeviceServiceImpl implements DeviceService{
         }
 	}
 	
-	@Transactional
+	/*@Transactional
 	public List<Device> getDevicesByUser(Integer userId) {
 		Person person = em.find(Person.class, userId);
 		if (person != null) {
 			return person.getDevices();
 		}
 		return null;
-	}
+	}*/
 }

@@ -9,5 +9,5 @@ public interface DeviceService {
     public List<Device> listDevice();
     public void removeDevice(Integer id);
     
-    public List<Device> getDevicesByUser(Integer userId);
+    //public List<Device> getDevicesByUser(Integer userId);
 }

@@ -20,8 +20,8 @@ public class PersonController {
     @Autowired
     private PersonService personService;
     
-    @Autowired
-    private DeviceService deviceService;
+    //@Autowired
+    //private DeviceService deviceService;
 
     @RequestMapping("/")
     public String listPeople(Map<String, Object> map) {
@@ -51,7 +51,8 @@ public class PersonController {
     @RequestMapping("/getDevices/{personId}")
     public String getDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
     	
-    	map.put("deviceList", deviceService.getDevicesByUser(personId));
+    	//map.put("deviceList", deviceService.getDevicesByUser(personId));
+    	map.put("deviceList", personService.getDevicesByUser(personId));
     	
     	return "redirect:/people/";
     }

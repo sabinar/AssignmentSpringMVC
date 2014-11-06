@@ -3,6 +3,7 @@ package com.example.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.model.Device;
 import com.example.model.Person;
 
 import javax.persistence.EntityManager;
@@ -38,4 +39,8 @@ public class PersonServiceImpl implements PersonService {
         }
     }
     
+    @Transactional
+    public List<Device> getDevicesByUser(Integer userId) {
+    	return em.find(Person.class, userId).getDevices();
+    }
 }
