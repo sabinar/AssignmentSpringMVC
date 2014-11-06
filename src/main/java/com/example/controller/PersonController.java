@@ -53,6 +53,6 @@ public class PersonController {
     	
     	map.put("deviceList", deviceService.getDevicesByUser(personId));
     	
-    	return "people";
+    	return "redirect:/people/";
     }
 }
