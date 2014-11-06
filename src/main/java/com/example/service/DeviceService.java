@@ -8,4 +8,6 @@ public interface DeviceService {
 	public void addDevice(Device device);
     public List<Device> listDevice();
     public void removeDevice(Integer id);
+    
+    public List<Device> getDevicesByUser(Integer userId);
 }

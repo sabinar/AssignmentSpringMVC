@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.model.Device;
+import com.example.model.Person;
 
 @Service
 public class DeviceServiceImpl implements DeviceService{
@@ -35,5 +36,14 @@ public class DeviceServiceImpl implements DeviceService{
         if (null != device) {
             em.remove(device);
         }
+	}
+	
+	@Transactional
+	public List<Device> getDevicesByUser(Integer userId) {
+		Person person = em.find(Person.class, userId);
+		if (person != null) {
+			return person.getDevices();
+		}
+		return null;
 	}
 }

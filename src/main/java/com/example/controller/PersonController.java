@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.model.Person;
+import com.example.service.DeviceService;
 import com.example.service.PersonService;
 
 import java.util.Map;
@@ -18,6 +19,9 @@ public class PersonController {
 
     @Autowired
     private PersonService personService;
+    
+    @Autowired
+    private DeviceService deviceService;
 
     @RequestMapping("/")
     public String listPeople(Map<String, Object> map) {
@@ -45,7 +49,9 @@ public class PersonController {
     }
     
     @RequestMapping("/getDevices/{personId}")
-    public String getDevicesByUser(@PathVariable("personId") Integer personId) {
+    public String getDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
+    	
+    	map.put("deviceList", deviceService.getDevicesByUser(personId));
     	
     	return "people";
     }
