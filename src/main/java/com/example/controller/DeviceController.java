@@ -26,7 +26,7 @@ public class DeviceController {
         map.put("device", new Device());
         map.put("deviceList", deviceService.listDevice());
 
-        return "redirect:/people/device/";
+        return "device";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
