@@ -12,8 +12,8 @@ public class Device {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "DEVICE_ID")
-	private Integer id;
+	//@Column(name = "DEVICE_ID")
+	private Integer deviceId;
 	
 	
 	private String phoneNumber;
@@ -24,12 +24,14 @@ public class Device {
 	@JoinColumn(name="id")
 	private Person person;
 
-	public Integer getId() {
-		return id;
+	
+
+	public Integer getDeviceId() {
+		return deviceId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setDeviceId(Integer deviceId) {
+		this.deviceId = deviceId;
 	}
 
 	public String getPhoneNumber() {

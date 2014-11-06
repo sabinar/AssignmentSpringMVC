@@ -24,7 +24,8 @@ public class Person {
     private String email;
     
     @OneToMany
-    @JoinColumn(name="device_id")
+    //@JoinColumn(name="device_id")
+    @JoinColumn (name = "deviceId")
     private List<Device> devices;
 
     
