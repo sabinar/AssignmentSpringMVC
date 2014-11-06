@@ -57,6 +57,7 @@
                     <tr>
                         <th>Phone</th>
                         <th>Operating System</th>
+                        <th>User Id</th>
                         <th>&nbsp;</th>
                     </tr>
                     </thead>
@@ -65,7 +66,7 @@
                         <tr>
                             <td>${device.phoneNumber}</td>
                             <td>${device.operatingSystem}</td>
-                            <td></td>
+                            <td>${device.id}</td>
                             <td><form action="delete/${device.deviceId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
                         </tr>
                     </c:forEach>

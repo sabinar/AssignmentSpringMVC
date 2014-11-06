@@ -43,4 +43,10 @@ public class PersonController {
 
         return "redirect:/people/";
     }
+    
+    @RequestMapping("/getDevices/{personId}")
+    public String getDevicesByUser(@PathVariable("personId") Integer personId) {
+    	
+    	return "people";
+    }
 }
