@@ -59,6 +59,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>&nbsp;</th>
+                        <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -67,9 +68,8 @@
                         	<td>${person.id} </td>
                             <td>${person.lastName}, ${person.firstName}</td>
                             <td>${person.email}</td>
-                            <td><form action="delete/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form>
-                            <form action="getDevices/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Display Devices"/></form>
-                            </td>
+                            <td><form action="delete/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+                            <td><form action="getDevices/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Display Devices"/></form></td>
                         </tr>
                     </c:forEach>
                     </tbody>
