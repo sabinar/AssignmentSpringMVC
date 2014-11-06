@@ -15,9 +15,10 @@ public class Device {
 	@Column(name = "DEVICE_ID")
 	private Integer id;
 	
-	private Integer phoneNumber;
 	
-	private Integer operatingSystem;
+	private String phoneNumber;
+	
+	private String operatingSystem;
 	
 	@ManyToOne
 	@JoinColumn(name="id")
@@ -31,21 +32,22 @@ public class Device {
 		this.id = id;
 	}
 
-	public Integer getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public Integer getOperatingSystem() {
+	public String getOperatingSystem() {
 		return operatingSystem;
 	}
 
-	public void setOperatingSystem(Integer operatingSystem) {
+	public void setOperatingSystem(String operatingSystem) {
 		this.operatingSystem = operatingSystem;
 	}
+
 
 	public Person getPerson() {
 		return person;
