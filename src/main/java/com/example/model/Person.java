@@ -28,7 +28,7 @@ public class Person {
     private List<Device> devices;
 
     
-public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

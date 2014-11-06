@@ -34,7 +34,7 @@ public class DeviceController {
 
         deviceService.addDevice(device);
 
-        return "redirect:/device/";
+        return "redirect:/people/device/";
     }
 
     @RequestMapping("/delete/{deviceId}")
@@ -42,6 +42,6 @@ public class DeviceController {
 
         deviceService.removeDevice(deviceId);
 
-        return "redirect:/device/";
+        return "redirect:/people/device/";
     }
 }
