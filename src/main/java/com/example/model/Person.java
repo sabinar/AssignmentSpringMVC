@@ -23,9 +23,9 @@ public class Person {
     
     private String email;
     
-//    @OneToMany
-//    @JoinColumn (name = "deviceId")
-//    private List<Device> devices;
+    @OneToMany
+    @JoinColumn (name = "deviceId")
+    private List<Device> devices;
 
     
 public Integer getId() {
@@ -60,11 +60,11 @@ public Integer getId() {
 		this.email = email;
 	}
 
-//	public List<Device> getDevices() {
-//		return devices;
-//	}
-//
-//	public void setDevices(List<Device> devices) {
-//		this.devices = devices;
-//	}
+	public List<Device> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<Device> devices) {
+		this.devices = devices;
+	}
 }
