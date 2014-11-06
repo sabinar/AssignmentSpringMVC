@@ -20,9 +20,9 @@ public class Device {
 	
 	private String operatingSystem;
 	
-	@ManyToOne
-	@JoinColumn(name="id")
-	private Person person;
+//	@ManyToOne
+//	@JoinColumn(name="id")
+//	private Person person;
 
 	
 
@@ -51,13 +51,13 @@ public class Device {
 	}
 
 
-	public Person getPerson() {
-		return person;
-	}
-
-	public void setPerson(Person person) {
-		this.person = person;
-	}
+//	public Person getPerson() {
+//		return person;
+//	}
+//
+//	public void setPerson(Person person) {
+//		this.person = person;
+//	}
 	
 	
 	
