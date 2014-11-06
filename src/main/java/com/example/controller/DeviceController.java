@@ -32,7 +32,6 @@ public class DeviceController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("device") Device device, BindingResult result) {
 
-    	//Integer userId = device.getPerson()
         deviceService.addDevice(device);
 
         return "redirect:/device/";
