@@ -23,10 +23,10 @@ public class DeviceController {
     @RequestMapping("/")
     public String listDevice(Map<String, Object> map) {
 
-        map.put("Device", new Device());
+        map.put("device", new Device());
         map.put("deviceList", deviceService.listDevice());
 
-        return "device";
+        return "redirect:/people/device/";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
