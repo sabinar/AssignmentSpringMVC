@@ -1,14 +1,17 @@
 package com.example.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.WebDataBinder;
 
 import com.example.model.Application;
 import com.example.model.Device;
@@ -71,12 +74,25 @@ public class ApplicationController {
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
     }
 	
+//    @InitBinder
+//    public void initBinder(WebDataBinder binder) {
+//    	binder.registerCustomEditor(List.class, "deviceListing", new CustomCollectionEditor(Set.class){
+//            protected Object convertElement(Object element){
+//                if (element instanceof String) {
+//                    Team team = teamCache.get(Integer.parseInt(element.toString()));
+//
+//                    return team;
+//                }
+//                return null;
+//            }
+//        }););
+//    }
     
     @RequestMapping(value = "/addDevice/mapping", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("appDetails") Application application, 
-    		BindingResult result) {
+    		BindingResult result, @PathVariable Integer categoryId) {
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    	System.err.println(application.getAppName() + ">>>" + application.getDevices());
+    	System.err.println(application.getAppName() + ">>>" + application.getDevices() + ">>>" + categoryId);
     	
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
         
