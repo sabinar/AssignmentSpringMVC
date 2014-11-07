@@ -44,8 +44,8 @@
 						</tr>
 						
 						<tr>
-							<td><form:label path="devices.device.deviceId">Device Id</form:label></td>
-							<td><form:input path="devices.device.deviceId" /></td>
+							<td><form:label path="">Device Id</form:label></td>
+							<td><form:select path="" multiple="true" items="${deviceListing}" itemLabel="Device" itemValue="deviceId"/></td>
 						</tr>
 						
 						<tr>

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.model.Application;
+import com.example.model.Device;
 import com.example.service.ApplicationService;
+import com.example.service.DeviceService;
 
 @Controller
 @RequestMapping("/application")
@@ -19,6 +21,9 @@ public class ApplicationController {
 
 	@Autowired
 	private ApplicationService applicationService;
+	
+	@Autowired
+	private DeviceService deviceService;
 	
 	@RequestMapping("/")
     public String list(Map<String, Object> map) {
@@ -42,9 +47,21 @@ public class ApplicationController {
         return "redirect:/people/application/";
     }
     
-    @RequestMapping("/addDevice/{appId}")
+    @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.GET)
     public String addDevice(@PathVariable("appId") Integer appId, Map<String, Object> map) {
+    	
     	map.put("appDetails" , applicationService.getApp(appId));
+    	map.put("deviceListing", deviceService.listDevice());
+    	
+    	return "addDeviceToApp";
+    }
+    
+    @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.POST)
+    public String updateAppWithDevice(@ModelAttribute("application") Application application,
+    		@ModelAttribute("device") Device device,
+    		BindingResult result) {
+    	
+    	System.err.println("inside post method");
     	return "addDeviceToApp";
     }
 	
