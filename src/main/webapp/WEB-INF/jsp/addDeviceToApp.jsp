@@ -45,7 +45,7 @@
 						
 						<tr>
 							<td><form:label path="">Device Id</form:label></td>
-							<td><form:select path="" multiple="true" items="${deviceListing}" itemLabel="phoneNumber" itemValue="deviceId"/></td>
+							<td><form:select path="devices" multiple="true" items="${deviceListing}" itemLabel="phoneNumber" itemValue="deviceId"/></td>
 						</tr>
 						
 						<tr>
