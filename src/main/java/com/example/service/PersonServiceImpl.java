@@ -55,8 +55,9 @@ public class PersonServiceImpl implements PersonService {
     	List<Device> devices = p.getDevices();
     	System.err.println("nnnamm>>"  + p.getFirstName() + ">>" + devices.size());
     	
-    	String str1 = "from Device as d where d.operatingSystem= 'wew'";// + p.getId();
+    	//String str1 = "from Device as d where d.operatingSystem= 'wew'";// + p.getId();
     	//String str1 = "from Device as d where d.userId= " + p.getUserId();
+    	String str1 = "from Device as d where d.userid= " + p.getUserId();
     	String str2 = "from Device";
     	String str3 = "select d from Device d where d.id = " + p.getUserId();
     	//Query query = em.createQuery(str);
