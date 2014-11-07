@@ -15,7 +15,7 @@ public class Person {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer userId;
 
     private String firstName;
 
@@ -28,12 +28,12 @@ public class Person {
     private List<Device> devices; 
 
     
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getFirstName() {

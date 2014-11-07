@@ -66,13 +66,13 @@
                     <tbody>
                     <c:forEach items="${peopleList}" var="person">
                         <tr>
-                        	<td>${person.id} </td>
+                        	<td>${person.userId} </td>
                             <td>${person.lastName}, ${person.firstName}</td>
                             <td>${person.email}</td>
-                            <td><form action="delete/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+                            <td><form action="delete/${person.userId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
                             <td>
                             <c:url var="editUrl" value="/form.html">
-					            <c:param name="id" value="${person.id}" />
+					            <c:param name="id" value="${person.userId}" />
 					        </c:url>
                             <a href='<c:out value="${editUrl}"/>'>Display</a>
                             <!--  form action="getDevices/${person.id}" method="post"><input type="submit" 

@@ -20,7 +20,7 @@ public class Device {
 	private String operatingSystem;
 	
 	@ManyToOne
-	@JoinColumn(name="id")
+	@JoinColumn(name="userId")
 	private Person person;
 
 	
@@ -30,7 +30,7 @@ public class Device {
 	}
 
 	public void setDeviceId(Integer deviceId) {
-		this.deviceId = deviceId;
+		this.deviceId = deviceId; 
 	}
 
 	public String getPhoneNumber() {
