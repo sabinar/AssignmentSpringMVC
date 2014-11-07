@@ -1,9 +1,12 @@
 package com.example.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -23,6 +26,8 @@ public class Device {
 	@JoinColumn(name="userId")
 	private Person person;
 
+	@ManyToMany (mappedBy = "devices")
+	private List<Application> applications;
 	
 
 	public Integer getDeviceId() {
@@ -56,6 +61,14 @@ public class Device {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+
+	public List<Application> getApplications() {
+		return applications;
+	}
+
+	public void setApplications(List<Application> applications) {
+		this.applications = applications;
 	}
 	
 	

@@ -6,7 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -21,8 +22,8 @@ public class Application {
 	
 	private String appDesc;
 	
-	@OneToMany
-    @JoinColumn (name = "deviceId")
+	@ManyToMany
+    @JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "appId") }, inverseJoinColumns = { @JoinColumn(name = "deviceId") })  
     private List<Device> devices;
 
 	public Integer getAppId() {
