@@ -56,12 +56,13 @@ public class PersonServiceImpl implements PersonService {
     	
     	String str1 = "from Device where id= " + p.getId();
     	String str2 = "from Device";
-    	String str3 = "select d from device d where d.id = " + p.getId();
+    	String str3 = "select d from Device d where d.id = " + p.getId();
     	//Query query = em.createQuery(str);
     	System.err.println("--> Query >" + str1);
     	//List<Device> list =  (List<Device>)query.getResultList();
     	//return (List<Device>)em.createQuery("from Device").getResultList();
-    	return (List<Device>)em.createQuery(str3).getResultList();
+//    	return (List<Device>)em.createQuery(str1).getResultList();
+    	return (List<Device>)em.createNativeQuery(str3).getResultList();
     	
 //    	 
 //    	for (Device d : list) {
