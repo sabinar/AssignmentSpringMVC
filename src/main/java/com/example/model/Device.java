@@ -2,7 +2,9 @@ package com.example.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -26,7 +28,7 @@ public class Device {
 	@JoinColumn(name="userId")
 	private Person person;
 
-	@ManyToMany (mappedBy = "devices")
+	@ManyToMany ( mappedBy = "devices")
 	private List<Application> applications;
 	
 

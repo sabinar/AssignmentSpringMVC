@@ -2,7 +2,9 @@ package com.example.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -22,7 +24,7 @@ public class Application {
 	
 	private String appDesc;
 	
-	@ManyToMany
+	@ManyToMany (cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "appId") }, inverseJoinColumns = { @JoinColumn(name = "deviceId") })  
     private List<Device> devices;
 
