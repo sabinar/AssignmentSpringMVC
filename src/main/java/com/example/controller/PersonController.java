@@ -28,6 +28,7 @@ public class PersonController {
 
         map.put("person", new Person());
         map.put("peopleList", personService.listPeople());
+        map.put("deviceList", personService.getDevicesByUser(15));
 
         return "people";
     }
