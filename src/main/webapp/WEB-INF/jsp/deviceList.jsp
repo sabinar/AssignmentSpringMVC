@@ -23,14 +23,14 @@
 </head>
 
 <body>
-<div class="navbar navbar-fixed-top">
+<!--  div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <a href="/" class="brand">Device</a>
             <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
         </div>
     </div>
-</div>
+</div-->
 
 <div class="container">
     <div class="row">

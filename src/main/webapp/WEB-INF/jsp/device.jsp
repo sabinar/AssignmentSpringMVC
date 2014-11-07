@@ -23,14 +23,14 @@
 </head>
 
 <body>
-<div class="navbar navbar-fixed-top">
+<!--  div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <a href="/" class="brand">Device</a>
             <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
         </div>
     </div>
-</div>
+</div-->
 
 <div class="container">
     <div class="row">
@@ -47,7 +47,7 @@
                 <form:label path="person.userId">User Id</form:label>
                 <form:input path="person.userId" />
                 <input type="submit" value="Add Device" class="btn"/>
-                <a href="<c:url value='/people/'/>">Back to User Page</a>
+                <a href="<c:url value='people' />">Back to User Page</a>
             </form:form>
 
 
