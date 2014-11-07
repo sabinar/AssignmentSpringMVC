@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -20,7 +21,8 @@ public class Device {
 	private String operatingSystem;
 	
 	@ManyToOne
-	@JoinColumn(name="id")
+	//@JoinColumn(name="id")
+	@JoinTable (name = "device")
 	private Person person;
 
 	

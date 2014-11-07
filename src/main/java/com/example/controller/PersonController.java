@@ -20,8 +20,8 @@ public class PersonController {
     @Autowired
     private PersonService personService;
     
-    //@Autowired
-    //private DeviceService deviceService;
+    @Autowired
+    private DeviceService deviceService;
 
     @RequestMapping("/")
     public String listPeople(Map<String, Object> map) {
