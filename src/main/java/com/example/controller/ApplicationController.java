@@ -65,7 +65,7 @@ public class ApplicationController {
     }*/
     
     @RequestMapping(value = "/updateApp", method = RequestMethod.POST)
-    public void updateAppWithDevice(@ModelAttribute("application") Application application, BindingResult result) {
+    public void updateAppWithDevice(@ModelAttribute("appDetails") Application application, BindingResult result) {
 
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
     }
