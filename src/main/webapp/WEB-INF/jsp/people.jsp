@@ -75,8 +75,7 @@
 					            <c:param name="id" value="${person.userId}" />
 					        </c:url>
                             <a href='<c:out value="${editUrl}"/>'>Display</a>
-                            <!--  form action="getDevices/${person.userId}" method="post"><input type="submit" 
-                            	class="btn btn-danger btn-mini" value="Display Devices"/></form-->
+                            
                             </td>
                         </tr>
                     </c:forEach>
