@@ -72,7 +72,7 @@ public class ApplicationController {
     }
 	
     
-    @RequestMapping(value = "/mapping", method = RequestMethod.POST)
+    @RequestMapping(value = "/addDevice/mapping", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("appDetails") Application application, BindingResult result) {
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
         
