@@ -61,7 +61,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>&npsp;</th>
+                        <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody>

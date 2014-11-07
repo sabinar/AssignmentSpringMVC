@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.model.Application;
-import com.example.model.Device;
 import com.example.service.ApplicationService;
 
 @Controller

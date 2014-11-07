@@ -33,6 +33,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 	}
 
 	@Override
+	@Transactional
 	public void delete(Integer appId) {
 		Application application = em.find(Application.class, appId);
         if (null != application) {
