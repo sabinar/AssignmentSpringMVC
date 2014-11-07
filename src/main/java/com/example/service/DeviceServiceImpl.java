@@ -25,6 +25,7 @@ public class DeviceServiceImpl implements DeviceService{
 
 	@Transactional
 	public List<Device> listDevice() {
+		System.err.println("--> Inside Listing Device");
 		CriteriaQuery<Device> c = em.getCriteriaBuilder().createQuery(Device.class);
         c.from(Device.class);
         return em.createQuery(c).getResultList();

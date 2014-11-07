@@ -28,6 +28,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Transactional
     public List<Person> listPeople() {
+    	System.err.println("--> Inside DEVICE listing");
         CriteriaQuery<Person> c = em.getCriteriaBuilder().createQuery(Person.class);
         c.from(Person.class);
         return em.createQuery(c).getResultList();
@@ -48,9 +49,10 @@ public class PersonServiceImpl implements PersonService {
     
     @Transactional
     public List<Device> getDevicesByUser(Integer userId) {
-    	System.err.println("Inside get Devices  By user");
+    	System.err.println("---> Inside get Devices  By user");
     	Person p = getPerson(userId);
-    	System.err.println("nnnamm>>"  + p.getFirstName() + ">>" + p.getDevices().size());
+    	List<Device> devices = p.getDevices();
+    	System.err.println("nnnamm>>"  + p.getFirstName() + ">>" + devices.size());
     	
 //    	String str = "select d FROM device d where d.id = " + p.getId();
 //    	Query query = em.createNativeQuery(str);
@@ -64,7 +66,7 @@ public class PersonServiceImpl implements PersonService {
     	
     	
     	System.err.println("end>>> " + p.getLastName());
-    	return p.getDevices();
+    	return devices;
     	//return list;
     }
 }
