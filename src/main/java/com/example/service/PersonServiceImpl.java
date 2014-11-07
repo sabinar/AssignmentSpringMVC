@@ -8,6 +8,7 @@ import com.example.model.Person;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -49,10 +50,14 @@ public class PersonServiceImpl implements PersonService {
     	System.err.println("Inside get Devices  By user");
     	Person p = getPerson(userId);
     	System.err.println("nnnamm>>"  + p.getFirstName() + ">>" + p.getDevices().size());
-    	/*for (Device d : p.getDevices()) {
+    	String str = "select * FROM device where id = " + p.getId();
+    	Query query = em.createQuery(str);
+    	List<Device> list =  (List<Device>)query.getResultList();
+    	 
+    	for (Device d : list) {
     		System.err.println("phone>>" +d.getPhoneNumber());
-    	}*/
+    	}
     	System.err.println("end>>> " + p.getLastName());
-    	return p.getDevices();
+    	return list;
     }
 }
