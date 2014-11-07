@@ -23,7 +23,7 @@ public class Device {
 	@ManyToOne
 	//@JoinColumn(name="id")
 	@JoinTable (name = "device")
-	private Person person;
+	private Person person; 
 
 	
 
