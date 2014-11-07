@@ -43,8 +43,8 @@
 							<td><form:input path="appDesc" value="${appDetails.appDesc}"/></td>
 						</tr>
 						<tr>
-							<td><form:label path="deviceId">Device Id</form:label></td>
-							<td><form:input path="deviceId" /></td>
+							<td><form:label path="device.deviceId">Device Id</form:label></td>
+							<td><form:input path="device.deviceId" /></td>
 						</tr>
 						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
