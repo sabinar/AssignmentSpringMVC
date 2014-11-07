@@ -1,0 +1,61 @@
+package com.example.model;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class Application {
+
+	@Id
+	@GeneratedValue
+	private Integer appId;
+	
+	@NotNull (message = "Please enter application name")
+	private String appName;
+	
+	private String appDesc;
+	
+	@OneToMany
+    @JoinColumn (name = "deviceId")
+    private List<Device> devices;
+
+	public Integer getAppId() {
+		return appId;
+	}
+
+	public void setAppId(Integer appId) {
+		this.appId = appId;
+	}
+
+	public String getAppName() {
+		return appName;
+	}
+
+	public void setAppName(String appName) {
+		this.appName = appName;
+	}
+
+	public String getAppDesc() {
+		return appDesc;
+	}
+
+	public void setAppDesc(String appDesc) {
+		this.appDesc = appDesc;
+	}
+
+	public List<Device> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<Device> devices) {
+		this.devices = devices;
+	}
+	
+	
+}
