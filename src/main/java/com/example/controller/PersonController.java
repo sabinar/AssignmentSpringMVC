@@ -31,7 +31,8 @@ public class PersonController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addPerson(@Valid @ModelAttribute("person") Person person, BindingResult result) {
-
+    	
+    	System.err.println(">>> Inside add user of controller");
     	if (result.hasErrors()) {
     		System.err.println("Some error message to come");
     	}
