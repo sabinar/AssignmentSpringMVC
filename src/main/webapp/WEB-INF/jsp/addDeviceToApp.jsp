@@ -44,8 +44,13 @@
 						</tr>
 						
 						<tr>
+							<td><form:label path="devices.device.deviceId">Device Id</form:label></td>
+							<td><form:input path="devices.device.deviceId" /></td>
+						</tr>
+						
+						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
-							<td><a href="<c:url value='people' />">Back to User Page</a></td>
+							<td><a href="<c:url value='application' />">Back to Application Page</a></td>
 						</tr>		
 					</tbody>
 				</table>
