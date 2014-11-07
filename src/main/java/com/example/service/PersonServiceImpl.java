@@ -51,8 +51,9 @@ public class PersonServiceImpl implements PersonService {
     	System.err.println("Inside get Devices  By user");
     	Person p = getPerson(userId);
     	System.err.println("nnnamm>>"  + p.getFirstName() + ">>" + p.getDevices().size());
-    	String str = "FROM device d where d.id = " + p.getId();
-    	Query query = em.createQuery(str);
+    	
+    	String str = "select d FROM device d where d.id = " + p.getId();
+    	Query query = em.createNativeQuery(str);
     	
     	List<Device> list =  (List<Device>)query.getResultList();
     	 
@@ -60,6 +61,7 @@ public class PersonServiceImpl implements PersonService {
     		System.err.println("phone>>" +d.getPhoneNumber());
     	}
     	System.err.println("end>>> " + p.getLastName());
+    	//return p.getDevices();
     	return list;
     }
 }
