@@ -75,6 +75,29 @@
                     </tbody>
                 </table>
             </c:if>
+            
+            
+            <c:if  test="${!empty deviceList}">
+                <h3>Device List</h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                    	<th>Phone Number</th>
+                        <th>Operating System</th>
+                        <th>User</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${deviceList}" var="device">
+                        <tr>
+                        	<td>${device.phoneNumber} </td>
+                            <td>${device.operatingSystem}</td>
+                            <td>${device.person.firstName}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </c:if>
         </div>
     </div>
 </div>
