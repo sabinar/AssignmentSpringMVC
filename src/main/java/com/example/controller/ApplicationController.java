@@ -52,6 +52,7 @@ public class ApplicationController {
     	
     	map.put("appDetails" , applicationService.getApp(appId));
     	map.put("deviceListing", deviceService.listDevice());
+    	map.put("link", "/addDevice/" + appId);
     	
     	return "addDeviceToApp";
     }
@@ -64,7 +65,7 @@ public class ApplicationController {
     	//return "addDeviceToApp";
     }*/
     
-    @RequestMapping(value = "/updateApp", method = RequestMethod.POST)
+    @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.POST)
     public void updateAppWithDevice(@ModelAttribute("appDetails") Application application, BindingResult result) {
 
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
