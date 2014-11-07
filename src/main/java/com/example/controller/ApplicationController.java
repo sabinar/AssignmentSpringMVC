@@ -71,4 +71,11 @@ public class ApplicationController {
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
     }
 	
+    
+    @RequestMapping(value = "/mapping", method = RequestMethod.POST)
+    public String addDevice(@ModelAttribute("application") Application application, BindingResult result) {
+
+        
+        return "redirect:/people/application/";
+    }
 }
