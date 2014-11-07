@@ -49,6 +49,10 @@ public class PersonServiceImpl implements PersonService {
     	System.err.println("Inside get Devices  By user");
     	Person p = getPerson(userId);
     	System.err.println("nnnamm>>"  + p.getFirstName());
+    	for (Device d : p.getDevices()) {
+    		System.err.println("phone>>" +d.getPhoneNumber());
+    	}
+    	System.err.println("end>>> " + p.getLastName());
     	return p.getDevices();
     }
 }
