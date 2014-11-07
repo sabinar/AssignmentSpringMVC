@@ -56,7 +56,7 @@ public class ApplicationController {
     	return "addDeviceToApp";
     }
     
-    @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/updateApp", method = RequestMethod.POST)
     public void updateAppWithDevice(@ModelAttribute("application") Application application,
     		 		BindingResult result, @PathVariable Integer deviceId) {
     	
