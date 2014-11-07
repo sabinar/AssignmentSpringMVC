@@ -10,7 +10,7 @@ import com.example.model.Application;
 import com.example.service.ApplicationService;
 
 @Controller
-@RequestMapping("/people/application")
+@RequestMapping("/application")
 public class ApplicationController {
 
 	@Autowired
