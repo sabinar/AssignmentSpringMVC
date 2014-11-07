@@ -30,7 +30,7 @@
             <div class="page-header">
                 <h1>Add App to Device Page</h1>
             </div>
-            <form:form method="post" action="add" commandName="application" class="form-vertical">
+            <form:form method="post" action="add" commandName="appDetails" class="form-vertical">
 				<table>
 					<tbody>
 						<tr>
