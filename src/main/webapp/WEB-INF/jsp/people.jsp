@@ -85,7 +85,7 @@
             </c:if>
             
             
-            <c:if  test="${!empty deviceList}">
+            <!--  c:if  test="${!empty deviceList}"-->
                 <h3>Device List</h3>
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -105,7 +105,7 @@
                     </c:forEach>
                     </tbody>
                 </table>
-            </c:if>
+            <!--  /c:if-->
         </div>
     </div>
 </div>
