@@ -39,7 +39,7 @@
                 <h1>Device List page</h1>
             </div>
             
-			<form method="get" action="/people">
+			<form method="get" action="/people/">
 
 
 	            <c:if  test="${!empty deviceList}">
