@@ -1,5 +1,6 @@
 package com.example.service;
 
+//import org.hibernate.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -50,8 +51,9 @@ public class PersonServiceImpl implements PersonService {
     	System.err.println("Inside get Devices  By user");
     	Person p = getPerson(userId);
     	System.err.println("nnnamm>>"  + p.getFirstName() + ">>" + p.getDevices().size());
-    	String str = "select d FROM device d where d.id = " + p.getId();
+    	String str = "FROM device d where d.id = " + p.getId();
     	Query query = em.createQuery(str);
+    	
     	List<Device> list =  (List<Device>)query.getResultList();
     	 
     	for (Device d : list) {
