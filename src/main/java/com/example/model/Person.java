@@ -24,7 +24,7 @@ public class Person {
     
     private String email;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person")
     @JoinColumn (name = "deviceId")
     private List<Device> devices;
 
