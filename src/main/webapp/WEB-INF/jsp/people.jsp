@@ -70,13 +70,7 @@
                             <td>${person.lastName}, ${person.firstName}</td>
                             <td>${person.email}</td>
                             <td><form action="delete/${person.userId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-                            <td>
-                            <c:url var="editUrl" value="/form.html">
-					            <c:param name="id" value="${person.userId}" />
-					        </c:url>
-                            <a href="<c:url value='deviceList.jsp'/>">Display</a>
-                            
-                            </td>
+                            <td><a href="<c:url value='getDevices/${person.userId}'/>">Display</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
