@@ -98,9 +98,9 @@
                     <tbody>
                     <c:forEach items="${deviceList}" var="device">
                         <tr>
-                        	<td>${device.firstName} </td>
-                            <td>${device.id}</td>
-                            <td></td>
+                        	<td>${device.phoneNumber} </td>
+                            <td>${device.operatingSystem}</td>
+                            <td>${device.person.firstName}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

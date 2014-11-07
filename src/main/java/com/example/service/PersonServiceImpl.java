@@ -46,6 +46,9 @@ public class PersonServiceImpl implements PersonService {
     
     @Transactional
     public List<Device> getDevicesByUser(Integer userId) {
-    	return em.find(Person.class, userId).getDevices();
+    	System.err.println("Inside get Devices  By user");
+    	Person p = getPerson(userId);
+    	System.err.println("nnnamm>>"  + p.getFirstName());
+    	return p.getDevices();
     }
 }
