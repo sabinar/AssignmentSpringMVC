@@ -25,7 +25,7 @@ public class Person {
     
     @OneToMany
     @JoinColumn (name = "deviceId")
-    private List<Device> devices;
+    private List<Device> devices; 
 
     
     public Integer getId() {
