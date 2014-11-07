@@ -47,6 +47,7 @@
                 <form:label path="person.userId">User Id</form:label>
                 <form:input path="person.userId" />
                 <input type="submit" value="Add Device" class="btn"/>
+                <a href="<c:url value='/people/'/>">Back to User Page</a>
             </form:form>
 
 
