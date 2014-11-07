@@ -12,5 +12,6 @@ public interface PersonService {
     public List<Person> listPeople();
     public void removePerson(Integer id);
     
+    public Person getPerson(Integer userId);
     public List<Device> getDevicesByUser(Integer userId);
 }

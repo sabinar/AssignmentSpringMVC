@@ -40,6 +40,11 @@ public class PersonServiceImpl implements PersonService {
     }
     
     @Transactional
+    public Person getPerson(Integer userId) {
+    	return em.find(Person.class, userId);
+    }
+    
+    @Transactional
     public List<Device> getDevicesByUser(Integer userId) {
     	return em.find(Person.class, userId).getDevices();
     }
