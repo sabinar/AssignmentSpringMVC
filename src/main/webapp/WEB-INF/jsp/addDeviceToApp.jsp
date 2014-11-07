@@ -42,10 +42,7 @@
 							<td><form:label path="appDesc">Application Description</form:label></td>
 							<td><form:input path="appDesc" value="${appDetails.appDesc}"/></td>
 						</tr>
-						<tr>
-							<td><form:label path="device.deviceId">Device Id</form:label></td>
-							<td><form:input path="device.deviceId" /></td>
-						</tr>
+						
 						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
 							<td><a href="<c:url value='people' />">Back to User Page</a></td>
