@@ -40,5 +40,11 @@ public class ApplicationServiceImpl implements ApplicationService {
             em.remove(application);
         }		
 	}
+	
+	@Override
+	@Transactional
+	public Application getApp(Integer appId) {
+		return em.find(Application.class, appId);
+	}
 
 }

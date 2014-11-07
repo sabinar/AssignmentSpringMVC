@@ -10,4 +10,6 @@ public interface ApplicationService {
 	public List<Application> list();
 	public void delete(Integer appId);
 	
+	public Application getApp(Integer appId);
+	
 }

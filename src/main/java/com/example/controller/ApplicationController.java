@@ -41,5 +41,11 @@ public class ApplicationController {
         applicationService.delete(appId);
         return "redirect:/people/application/";
     }
+    
+    @RequestMapping("/addDevice/{appId}")
+    public String addDevice(@PathVariable("appId") Integer appId, Map<String, Object> map) {
+    	map.put("appDetails" , applicationService.getApp(appId));
+    	return "addDeviceToApp";
+    }
 	
 }
