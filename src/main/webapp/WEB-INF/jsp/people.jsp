@@ -50,6 +50,7 @@
             </form:form>
 
 
+			
             <c:if  test="${!empty peopleList}">
                 <h3>People</h3>
                 <table class="table table-bordered table-striped">
@@ -69,7 +70,14 @@
                             <td>${person.lastName}, ${person.firstName}</td>
                             <td>${person.email}</td>
                             <td><form action="delete/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-                            <td><form action="getDevices/${person.id}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Display Devices"/></form></td>
+                            <td>
+                            <c:url var="editUrl" value="/form.html">
+					            <c:param name="id" value="${person.id}" />
+					        </c:url>
+                            <a href='<c:out value="${editUrl}"/>'>Display</a>
+                            <!--  form action="getDevices/${person.id}" method="post"><input type="submit" 
+                            	class="btn btn-danger btn-mini" value="Display Devices"/></form-->
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>
