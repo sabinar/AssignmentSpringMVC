@@ -52,40 +52,12 @@ public class PersonServiceImpl implements PersonService {
     	System.err.println("---> Inside get Devices  By user");
     	Person p = getPerson(userId);
     	if (p != null) {
-    	List<Device> devices = p.getDevices();
-    	System.err.println("nnnamm>>"  + p.getFirstName() + ">>" + devices.size());
-    	
-    	
-//    	em.getCriteriaBuilder().
-//    	
-//    	CriteriaQuery<Person> c = em.getCriteriaBuilder().createQuery(Person.class);
-//        c.from(Person.class);
-//        c.
-//        return em.createQuery(c).getResultList();
-    	
-    	
-    	//String str1 = "from Device as d where d.operatingSystem= 'wew'";// + p.getId();
-    	//String str1 = "from Device as d where d.userId= " + p.getUserId();
-    	String str1 = "from Device as d where d.person.userId= " + p.getUserId();
-    	String str2 = "from Device";
-    	String str3 = "select d from Device d where d.id = " + p.getUserId();
-    	//Query query = em.createQuery(str);
-    	System.err.println("--> Query >" + str1);
-    	//List<Device> list =  (List<Device>)query.getResultList();
-    	//return (List<Device>)em.createQuery("from Device").getResultList();
-    	return (List<Device>)em.createQuery(str1).getResultList();
-    	//return (List<Device>)em.createNativeQuery(str3).getResultList();
+	    	//String str1 = "from Device as d where d.operatingSystem= 'wew'";// + p.getId();
+	    	String str1 = "from Device as d where d.person.userId= " + p.getUserId();
+	    	System.err.println("--> Query >" + str1);
+	    	//return (List<Device>)em.createQuery("from Device").getResultList();
+	    	return (List<Device>)em.createQuery(str1).getResultList();
     	}
     	return null;
-//    	 
-//    	for (Device d : list) {
-//    		System.err.println("phone>>" +d.getPhoneNumber());
-//    	}
-//    	
-    	
-    	
-    	//System.err.println("end>>> " + p.getLastName());
-    	//return devices;
-    	//return list;
     }
 }
