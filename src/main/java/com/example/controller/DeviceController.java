@@ -45,4 +45,10 @@ public class DeviceController {
 
         return "redirect:/people/device/";
     }
+    
+    @RequestMapping("/people")
+    public String redirectToUserPage() {
+    	System.err.println("---> Reached inside device page to redirect to User page");
+    	return "redirect:/people/";
+    }
 }
