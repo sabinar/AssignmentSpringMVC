@@ -50,7 +50,6 @@
 	                        <th>Phone</th>
 	                        <th>Operating System</th>
 	                        <th>User Id</th>
-	                        <th>&nbsp;</th>
 	                    </tr>
 	                    </thead>
 	                    <tbody>

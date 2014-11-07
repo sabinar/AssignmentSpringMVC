@@ -40,13 +40,32 @@
             </div>
             <form:form method="post" action="add" commandName="person" class="form-vertical">
 
-                <form:label path="firstName">First Name</form:label>
-                <form:input path="firstName" />
-                <form:label path="lastName">Last Name</form:label>
-                <form:input path="lastName" />
-                <form:label path="email">Email</form:label>
-                <form:input path="email" />
-                <input type="submit" value="Add Person" class="btn"/>
+				<form:errors path="*" cssClass="errorblock" element="div"></form:errors>
+
+				<table>
+					<tbody>
+						<tr>
+							<td><form:label path="firstName">First Name</form:label></td>
+							<td><form:input path="firstName" /></td>
+							<td><form:errors path="firstName" cssClass="error" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="lastName">Last Name</form:label></td>
+							<td><form:input path="lastName" /></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><form:label path="email">Email</form:label></td>
+							<td><form:input path="email" /></td>
+							<td><form:errors path="email" cssClass="error" /></td>
+						</tr>
+						<tr>
+							<td colspan="3"><input type="submit" value="Add Person" class="btn"/></td>
+						</tr>
+					</tbody>
+				</table>
+                
+                
             </form:form>
 
 
