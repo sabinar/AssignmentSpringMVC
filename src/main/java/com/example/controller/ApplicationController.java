@@ -58,8 +58,7 @@ public class ApplicationController {
     
     @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.POST)
     public void updateAppWithDevice(@ModelAttribute("application") Application application,
-    		@ModelAttribute("device") Device device,
-    		BindingResult result) {
+    		 		BindingResult result, @PathVariable Integer deviceId) {
     	
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
     	//return "addDeviceToApp";
