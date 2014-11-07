@@ -61,7 +61,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Description</th>
-                        
+                        <th>&npsp;</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -70,6 +70,7 @@
                             <td>${application.appId}</td>
                             <td>${application.appName}</td>
                             <td>${application.appDesc}</td>
+                            <td><form action="delete/${application.appId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
                         </tr>
                     </c:forEach>
                     </tbody>
