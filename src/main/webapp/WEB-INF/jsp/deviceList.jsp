@@ -38,32 +38,35 @@
             <div class="page-header">
                 <h1>Device List page</h1>
             </div>
+            
+			<form method="get" action="people">
 
 
-
-            <c:if  test="${!empty deviceList}">
-                <h3>Devices</h3>
-                <table class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th>Phone</th>
-                        <th>Operating System</th>
-                        <th>User Id</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${deviceList}" var="device">
-                        <tr>
-                            <td>${device.phoneNumber}</td>
-                            <td>${device.operatingSystem}</td>
-                            <td>${device.person.userId} ${device.person.firstName} ${device.person.lastName}</td>
-                            <td><form action="delete/${device.deviceId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </c:if>
+	            <c:if  test="${!empty deviceList}">
+	                <h3>Devices</h3>
+	                <table class="table table-bordered table-striped">
+	                    <thead>
+	                    <tr>
+	                        <th>Phone</th>
+	                        <th>Operating System</th>
+	                        <th>User Id</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
+	                    </thead>
+	                    <tbody>
+	                    <c:forEach items="${deviceList}" var="device">
+	                        <tr>
+	                            <td>${device.phoneNumber}</td>
+	                            <td>${device.operatingSystem}</td>
+	                            <td>${device.person.userId} ${device.person.firstName} ${device.person.lastName}</td>	                            
+	                        </tr>
+	                    </c:forEach>
+	                    </tbody>
+	                </table>
+	            </c:if>
+	            
+	            <input type="submit" value="Back" class="btn"/>
+            </form>
         </div>
     </div>
 </div>
