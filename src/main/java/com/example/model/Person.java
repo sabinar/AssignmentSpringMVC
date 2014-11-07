@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Person {
@@ -17,6 +18,7 @@ public class Person {
     @GeneratedValue
     private Integer userId;
 
+    @NotNull(message = "Please enter name")
     private String firstName;
 
     private String lastName;

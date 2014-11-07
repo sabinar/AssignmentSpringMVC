@@ -14,16 +14,15 @@ import com.example.service.PersonService;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 @Controller
 public class PersonController {
 
     @Autowired
     private PersonService personService;
     
-    @Autowired
-    private DeviceService deviceService;
-
-    @RequestMapping("/")
+        @RequestMapping("/")
     public String listPeople(Map<String, Object> map) {
         map.put("person", new Person());
         map.put("peopleList", personService.listPeople());
@@ -31,8 +30,11 @@ public class PersonController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addPerson(@ModelAttribute("person") Person person, BindingResult result) {
+    public String addPerson(@Valid @ModelAttribute("person") Person person, BindingResult result) {
 
+    	if (result.hasErrors()) {
+    		System.err.println("Some error message to come");
+    	}
         personService.addPerson(person);
 
         return "redirect:/people/";
@@ -49,7 +51,6 @@ public class PersonController {
     @RequestMapping("/getDevices/{personId}")
     public String getDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
     	
-    	//map.put("deviceList", deviceService.getDevicesByUser(personId));
     	map.put("deviceList", personService.getDevicesByUser(personId));
     	
     	return "deviceList";
