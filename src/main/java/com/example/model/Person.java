@@ -3,6 +3,7 @@ package com.example.model;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,7 +25,7 @@ public class Person {
     
     private String email;
     
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "person")
+    @OneToMany(cascade= CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "person")
     //@JoinColumn (name = "deviceId")
     private List<Device> devices;
 
