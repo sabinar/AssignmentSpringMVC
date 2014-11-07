@@ -74,7 +74,7 @@
                             <c:url var="editUrl" value="/form.html">
 					            <c:param name="id" value="${person.userId}" />
 					        </c:url>
-                            <a href='<c:out value="${editUrl}"/>'>Display</a>
+                            <a href="<c:url value='deviceList.jsp'/>">Display</a>
                             
                             </td>
                         </tr>
