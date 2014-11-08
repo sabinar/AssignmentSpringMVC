@@ -33,6 +33,12 @@ public class DeviceServiceImpl implements DeviceService{
         c.from(Device.class);
         return em.createQuery(c).getResultList();
 	}
+	
+	@Override
+	@Transactional
+	public Device getDevice(Integer deviceId) {
+		return em.find(Device.class, deviceId);
+	}
 
 	@Override
 	@Transactional

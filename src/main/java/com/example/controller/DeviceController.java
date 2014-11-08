@@ -49,6 +49,7 @@ public class DeviceController {
     @RequestMapping(value = "/getApplications/{deviceId}", method = RequestMethod.GET)
     public String getApplications(@PathVariable("deviceId") Integer deviceId, Map<String, Object> map) {
     	
+    	map.put("device", deviceService.getDevice(deviceId));
     	map.put("applicationList", deviceService.getApplicationsByDevice(deviceId));
     	return "appListPerDevice";
     }

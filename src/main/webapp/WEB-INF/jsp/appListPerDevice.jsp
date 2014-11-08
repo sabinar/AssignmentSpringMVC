@@ -31,13 +31,15 @@
                 <h1>Application List Per Device page</h1>
             </div>
             
-			<form method="get" action="/device/">
+			
+			<form:form method="get" action="add" commandName="device" class="form-vertical">
+			
 				
 				<table>
 					<tbody>
 						<tr>
 							<td>Device Id</td>
-							<td></td>
+							<td><form:label path="deviceId" value="${device.deviceId}"></form:label></td>
 						</tr>
 						<tr>
 							<td>Phone Number</td>
@@ -73,7 +75,7 @@
 	            </c:if>
 	            
 	            <input type="submit" value="Back" class="btn"/>
-            </form>
+            </form:form>
         </div>
     </div>
 </div>
