@@ -59,4 +59,11 @@ public class DeviceController {
     	System.err.println("---> Reached inside device page to redirect to User page");
     	return "redirect:/people/";
     }
+    
+    @RequestMapping("/backToDeviceList")
+    public String redirectToDeviceList() {
+    	System.err.println("---->>> Back to device list page");
+    	
+    	return "redirect:/people/device/";
+    }
 }
