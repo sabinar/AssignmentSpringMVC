@@ -91,6 +91,10 @@
 	            <!-- input type="submit" value="Back" class="btn"/-->
 	            <a href="<c:url value='/people/' />">Back</a>
             </form:form>
+            
+            <form method=GET action="people">
+            	<input type="submit" value="Back" class="btn"/>
+            </form>
         </div>
     </div>
 </div>
