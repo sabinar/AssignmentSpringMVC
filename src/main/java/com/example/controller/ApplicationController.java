@@ -65,6 +65,7 @@ public class ApplicationController {
     	
     	//map.put("deviceListing", deviceCache);
        	map.put("appDetails" , applicationService.getApp(appId));
+       	map.put("appId" , appId);
     	map.put("deviceListing", deviceService.listDevice());
     	    	
     	return "addDeviceToApp";
@@ -92,11 +93,11 @@ public class ApplicationController {
     	});
     }
     
-    @RequestMapping(value = "/addDevice/mapping", method = RequestMethod.POST)
+    @RequestMapping(value = "/addDevice/mapping/{appId}", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("appDetails") Application application, 
-    		BindingResult result) {
+    		BindingResult result, @PathVariable("appId") Integer appId) {
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    	System.err.println(application.getAppName() + ">>>" + application.getDevices().size() + ">>>" + application.getAppId());
+    	System.err.println(application.getAppName() + ">>>" + application.getDevices().size() + ">>>" + application.getAppId() + ">>" + appId);
     	
     	applicationService.save(application);
         return "redirect:/people/application/";
