@@ -104,7 +104,12 @@ public class ApplicationController {
     }
     
     @RequestMapping("/addDevice/backToapplication")
-    public String redirectToUserPage() {
+    public String redirectToApplicationPage() {
     	return "redirect:/people/application/";
+    }
+    
+    @RequestMapping("/backToDevice")
+    public String redirectToDevicePage() {
+    	return "redirect:/people/device/";
     }
 }

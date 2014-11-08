@@ -43,7 +43,7 @@
 						</tr>
 						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
-							<td><a href="<c:url value='people' />">Back to User Page</a></td>
+							<td><a href="<c:url value='backToDevice' />">Back to Device Page</a></td>
 						</tr>		
 					</tbody>
 				</table>
