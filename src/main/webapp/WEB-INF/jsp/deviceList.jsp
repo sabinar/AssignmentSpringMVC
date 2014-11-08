@@ -42,14 +42,16 @@
 			
 			
 			<form:form method="get" action="/people" commandName="personDetails">
-			
-
 				<table>
 					<tbody>
 						<tr>
-							<td><form:label path="userId"></form:label></td>
-							<td><form:input path="userId" value="${userId}"/>
-								
+							<td><form:label path="userId"></form:label>User Id</td>
+							<td><form:input path="userId" value="${userId}" readonly="true"/>
+						</tr>
+						
+						<tr>
+							<td><form:label path="firstName"></form:label>First Name</td>
+							<td><form:input path="firstName" value="${firstName}" readonly="true"/>
 						</tr>
 					</tbody>
 				</table>
