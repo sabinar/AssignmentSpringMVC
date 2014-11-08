@@ -40,7 +40,8 @@
 					<tbody>
 						<tr>
 							<td><form:label path="appName">Application Name</form:label></td>
-							<td><form:input path="appName" /></td>
+							<td><form:input path="appName" /><form:errors path="appName" cssClass="error" /></td>
+							
 						</tr>
 						<tr>
 							<td><form:label path="appDesc">Application Description</form:label></td>
