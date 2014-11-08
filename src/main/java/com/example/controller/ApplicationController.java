@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomCollectionEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -74,19 +75,18 @@ public class ApplicationController {
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
     }
 	
-//    @InitBinder
-//    public void initBinder(WebDataBinder binder) {
-//    	binder.registerCustomEditor(List.class, "deviceListing", new CustomCollectionEditor(Set.class){
-//            protected Object convertElement(Object element){
-//                if (element instanceof String) {
-//                    Team team = teamCache.get(Integer.parseInt(element.toString()));
-//
-//                    return team;
-//                }
-//                return null;
-//            }
-//        }););
-//    }
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+    	binder.registerCustomEditor(List.class, "deviceListing", new CustomCollectionEditor(List.class) {
+    		protected Object convertElement(Object element) {
+    			if (element instanceof String) {
+    				System.err.println("Reached here");
+    				return deviceService.listDevice().get(0);
+    			}
+    			return null;
+    		}
+    	});
+    }
     
     @RequestMapping(value = "/addDevice/mapping", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("appDetails") Application application, 
