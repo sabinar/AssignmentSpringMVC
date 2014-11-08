@@ -41,7 +41,7 @@
             
 			
 			
-			<form:form method="get" action="/people" commandName="personDetails">
+			<form:form method="get" action="people" commandName="personDetails">
 				<table>
 					<tbody>
 						<tr>
@@ -52,6 +52,16 @@
 						<tr>
 							<td><form:label path="firstName"></form:label>First Name</td>
 							<td><form:input path="firstName" value="${firstName}" readonly="true"/>
+						</tr>
+						
+						<tr>
+							<td><form:label path="lastName"></form:label>Last Name</td>
+							<td><form:input path="lastName" value="${lastName}" readonly="true"/>
+						</tr>
+						
+						<tr>
+							<td><form:label path="email"></form:label>Email</td>
+							<td><form:input path="email" value="${email}" readonly="true"/>
 						</tr>
 					</tbody>
 				</table>
