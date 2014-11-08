@@ -44,8 +44,8 @@
 				<table>
 					<tbody>
 						<tr>
-							<td><form:label path="firstName">First Name</form:label></td>
-							<td><form:input path="firstName" value="${personDetails.firstName}"/></td>
+							<td>First Name</td>
+							<td>${personDetails.userId}</td>
 						</tr>
 					</tbody>
 				</table>
