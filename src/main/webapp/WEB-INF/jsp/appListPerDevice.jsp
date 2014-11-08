@@ -37,7 +37,7 @@
 					<tbody>
 						<tr>
 							<td><form:label path="">Device Id</form:label></td>
-							<td><form:label path=""></form:label></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td><form:label path="">Phone Number</form:label></td>
