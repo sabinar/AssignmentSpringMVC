@@ -71,17 +71,17 @@
 	                <table class="table table-bordered table-striped">
 	                    <thead>
 	                    <tr>
+	                    	<th>Phone ID</th>
 	                        <th>Phone</th>
 	                        <th>Operating System</th>
-	                        <th>User Id</th>
 	                    </tr>
 	                    </thead>
 	                    <tbody>
 	                    <c:forEach items="${deviceList}" var="device">
 	                        <tr>
+	                        	<td>${device.deviceId}</td>
 	                            <td>${device.phoneNumber}</td>
-	                            <td>${device.operatingSystem}</td>
-	                            <td>${device.person.userId} ${device.person.firstName} ${device.person.lastName}</td>	                            
+	                            <td>${device.operatingSystem}</td>                            
 	                        </tr>
 	                    </c:forEach>
 	                    </tbody>

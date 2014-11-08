@@ -39,15 +39,15 @@
 					<tbody>
 						<tr>
 							<td><form:label path="deviceId">Device Id</form:label></td>
-							<td><form:label path="deviceId" value="${device.deviceId}"></form:label></td>
+							<td><form:label path="deviceId" value="${deviceId}"></form:label></td>
 						</tr>
 						<tr>
 							<td><form:label path="phoneNumber">Phone Number</form:label></td>
-							<td><form:label path="phoneNumber" value="${device.phoneNumber}"></form:label></td>
+							<td><form:label path="phoneNumber" value="${phoneNumber}"></form:label></td>
 						</tr>
 						<tr>
 							<td><form:label path="operatingSystem">Operating System</form:label></td>
-							<td><form:label path="operatingSystem" value="${device.operatingSystem}"></form:label></td>
+							<td><form:label path="operatingSystem" value="${operatingSystem}"></form:label></td>
 						</tr>
 					</tbody>
 				</table>
