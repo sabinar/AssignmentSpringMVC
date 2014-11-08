@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomCollectionEditor;
 import org.springframework.stereotype.Controller;
@@ -41,7 +43,7 @@ public class ApplicationController {
     }
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addApplication(@ModelAttribute("application") Application application, BindingResult result) {
+    public String addApplication(@Valid @ModelAttribute("application") Application application, BindingResult result) {
 
         applicationService.add(application);
         return "redirect:/people/application/";

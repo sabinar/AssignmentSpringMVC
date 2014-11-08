@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
 public class Application {
 
@@ -20,7 +22,7 @@ public class Application {
 	@GeneratedValue
 	private Integer appId;
 	
-	@NotNull (message = "Please enter application name")
+	@NotBlank (message = "Please enter application name")
 	private String appName;
 	
 	private String appDesc;
