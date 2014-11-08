@@ -51,8 +51,9 @@ public class ApplicationServiceImpl implements ApplicationService {
 	@Override
 	@Transactional
 	public void save(Application application) {
+		System.err.println(">>>inside save>>" + application.getAppId());
 		em.merge(application);
-		
+		System.err.println(">>>inside save>>after save>>>" + application.getAppId());
 	}
 
 }

@@ -96,7 +96,7 @@ public class ApplicationController {
     public String addDevice(@ModelAttribute("appDetails") Application application, 
     		BindingResult result) {
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    	System.err.println(application.getAppName() + ">>>" + application.getDevices().size() + ">>>" );
+    	System.err.println(application.getAppName() + ">>>" + application.getDevices().size() + ">>>" + application.getAppId());
     	
     	applicationService.save(application);
         return "redirect:/people/application/";
