@@ -31,7 +31,7 @@
                 <h1>Application List Per Device page</h1>
             </div>
             
-			
+			${deviceDetails.deviceId}
 			<form:form method="get" action="backToDeviceList" commandName="deviceDetails" class="form-vertical">
 			
 				

@@ -23,8 +23,7 @@ public class DeviceController {
     @RequestMapping("/")
     public String listDevice(Map<String, Object> map) {
     	
-    	System.err.println("Hello, logs!");
-        map.put("device", new Device());
+    	map.put("device", new Device());
         map.put("deviceList", deviceService.listDevice());
 
         return "device";
