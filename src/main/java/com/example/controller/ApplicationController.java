@@ -63,7 +63,8 @@ public class ApplicationController {
     	for (Device d : deviceListing) {
     		deviceCache.put(d.getDeviceId(), d);    		
     	}
-    	map.put("deviceListing", deviceCache);
+    	//map.put("deviceListing", deviceCache);
+    	map.put("deviceListing", deviceService.listDevice());
     	    	
     	return "addDeviceToApp";
     }
