@@ -60,7 +60,7 @@ public class DeviceController {
     	return "redirect:/people/";
     }
     
-    @RequestMapping("/backToDeviceList")
+    @RequestMapping("/getApplications/backToDeviceList")
     public String redirectToDeviceList() {
     	System.err.println("---->>> Back to device list page");
     	
