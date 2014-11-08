@@ -31,23 +31,20 @@
                 <h1>Application List Per Device page</h1>
             </div>
             
-			${deviceDetails.deviceId}
 			<form:form method="get" action="backToDeviceList" commandName="deviceDetails" class="form-vertical">
-			
-				
 				<table>
 					<tbody>
 						<tr>
 							<td><form:label path="deviceId">Device Id</form:label></td>
-							<td><form:label path="deviceId" value="${deviceId}"></form:label></td>
+							<td><form:input path="deviceId" value="${deviceId}" readonly="true" /></td>
 						</tr>
 						<tr>
 							<td><form:label path="phoneNumber">Phone Number</form:label></td>
-							<td><form:label path="phoneNumber" value="${phoneNumber}"></form:label></td>
+							<td><form:input path="phoneNumber" value="${phoneNumber}" readonly="true" /></td>
 						</tr>
 						<tr>
 							<td><form:label path="operatingSystem">Operating System</form:label></td>
-							<td><form:label path="operatingSystem" value="${operatingSystem}"></form:label></td>
+							<td><form:input path="operatingSystem" value="${operatingSystem}" readonly="true" /></td>
 						</tr>
 					</tbody>
 				</table>
