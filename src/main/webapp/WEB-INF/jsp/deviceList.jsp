@@ -39,13 +39,17 @@
                 <h1>Device List page</h1>
             </div>
             
-			<form method="get" action="/people/">
+			
+			
+			<form:form method="get" action="/people" commandName="personDetails">
+			
 
 				<table>
 					<tbody>
 						<tr>
-							<td>First Name</td>
-							<td>${personDetails.userId}</td>
+							<td><form:label path="userId"></form:label></td>
+							<td><form:input path="userId" value="${userId}"/>
+								
 						</tr>
 					</tbody>
 				</table>
@@ -73,7 +77,7 @@
 	            </c:if>
 	            
 	            <input type="submit" value="Back" class="btn"/>
-            </form>
+            </form:form>
         </div>
     </div>
 </div>
