@@ -62,6 +62,10 @@
 						<tr>
 							<td colspan="3"><input type="submit" value="Add Person" class="btn"/></td>
 						</tr>
+						<tr>
+							<td><a href="<c:url value='deviceListPage' />">All Device List</a></td>
+							<td><a href="<c:url value='appListPage' />">All Application List</a></td>
+						</tr>
 					</tbody>
 				</table>
                 

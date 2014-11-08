@@ -56,4 +56,14 @@ public class PersonController {
     	
     	return "deviceList";
     }
+    
+    @RequestMapping("/deviceListPage")
+    public String redirectToDeviceList() {
+    	return "redirect:/people/device/";
+    }
+    
+    @RequestMapping("/appListPage")
+    public String redirectToApplicationList() {
+    	return "redirect:/people/application/";
+    }
 }

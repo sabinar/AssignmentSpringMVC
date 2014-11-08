@@ -31,15 +31,27 @@
                 <h1>Device page</h1>
             </div>
             <form:form method="post" action="add" commandName="device" class="form-vertical">
-
-                <form:label path="phoneNumber">Phone number</form:label>
-                <form:input path="phoneNumber" />
-                <form:label path="operatingSystem">Operating System</form:label>
-                <form:input path="operatingSystem" />
-                <form:label path="person.userId">User Id</form:label>
-                <form:input path="person.userId" />
-                <input type="submit" value="Add Device" class="btn"/>
-                <a href="<c:url value='people' />">Back to User Page</a>
+				<table>
+					<tbody>
+						<tr>
+							<td><form:label path="phoneNumber">Phone number</form:label></td>
+							<td><form:input path="phoneNumber" /></td>
+						</tr>
+							
+						<tr>
+							<td><form:label path="operatingSystem">Operating System</form:label></td>
+							<td><form:input path="operatingSystem" /></td>
+						</tr>
+						<tr>
+							<td><form:label path="person.userId">User Id</form:label></td>
+							<td><form:input path="person.userId" /></td>
+						</tr>
+						<tr>
+							<td><input type="submit" value="Add Device" class="btn"/></td>
+							<td><a href="<c:url value='people' />">Back to User Page</a></td>
+						</tr>
+					</tbody>
+				</table>
             </form:form>
 
 
