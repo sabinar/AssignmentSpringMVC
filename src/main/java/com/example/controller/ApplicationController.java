@@ -60,10 +60,10 @@ public class ApplicationController {
     	//map.put("deviceListing", deviceService.listDevice());
     	
     	List<Device> deviceListing = deviceService.listDevice();
-    	for (Device d : deviceListing) {
-    		if (d != null)
-    			deviceCache.put(d.getDeviceId(), d);    		
-    	}
+//    	for (Device d : deviceListing) {
+//    		if (d != null)
+//    			deviceCache.put(d.getDeviceId(), d);    		
+//    	}
     	//map.put("deviceListing", deviceCache);
     	map.put("deviceListing", deviceService.listDevice());
     	    	
