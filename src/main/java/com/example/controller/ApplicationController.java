@@ -90,9 +90,10 @@ public class ApplicationController {
     
     @RequestMapping(value = "/addDevice/mapping", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("appDetails") Application application, 
-    		BindingResult result, @PathVariable Integer categoryId) {
+    		BindingResult result) {
+    	//, @PathVariable Integer categoryId
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    	System.err.println(application.getAppName() + ">>>" + application.getDevices() + ">>>" + categoryId);
+    	System.err.println(application.getAppName() + ">>>" + application.getDevices() + ">>>" );
     	
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
         
