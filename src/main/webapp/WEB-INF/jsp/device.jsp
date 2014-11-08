@@ -50,6 +50,9 @@
 							<td><input type="submit" value="Add Device" class="btn"/></td>
 							<td><a href="<c:url value='people' />">Back to User Page</a></td>
 						</tr>
+						<tr>
+							<td colspan=2><a href="<c:url value='appListPage' />">All Application List</a></td>
+						</tr>
 					</tbody>
 				</table>
             </form:form>

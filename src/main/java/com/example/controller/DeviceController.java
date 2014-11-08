@@ -68,4 +68,9 @@ public class DeviceController {
     	
     	return "redirect:/people/device/";
     }
+    
+    @RequestMapping("/appListPage")
+    public String redirectToApplicationList() {
+    	return "redirect:/people/application/";
+    }
 }
