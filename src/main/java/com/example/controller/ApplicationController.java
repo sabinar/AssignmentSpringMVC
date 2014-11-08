@@ -78,16 +78,17 @@ public class ApplicationController {
     	//return "addDeviceToApp";
     }*/
     
-    @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.POST)
     public void updateAppWithDevice(@ModelAttribute("appDetails") Application application, BindingResult result) {
 
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    }
+    }*/
 	
     @InitBinder
     public void initBinder(WebDataBinder binder) {
     	binder.registerCustomEditor(List.class, "devices", new CustomCollectionEditor(List.class) {
     		protected Object convertElement(Object element) {
+    			System.err.println("Inside binder");
     			if (element instanceof String) {
     				Device device = deviceCache.get(Integer.valueOf(element.toString()));
     				System.err.println("Reached here");
