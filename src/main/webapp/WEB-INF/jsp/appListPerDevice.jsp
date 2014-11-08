@@ -32,7 +32,7 @@
             </div>
             
 			
-			<form:form method="get" action="backToDeviceList" commandName="device" class="form-vertical">
+			<form:form method="get" action="backToDeviceList" commandName="deviceDetails" class="form-vertical">
 			
 				
 				<table>

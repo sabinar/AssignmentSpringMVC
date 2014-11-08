@@ -51,8 +51,7 @@ public class DeviceController {
     	
     	Device deviceDetails = deviceService.getDevice(deviceId);
     	System.err.println(">>>Phone number>>>" + deviceDetails.getPhoneNumber());
-    	map.put("device", deviceDetails);
-    	
+    	map.put("deviceDetails", deviceDetails);
     	
     	map.put("applicationList", deviceService.getApplicationsByDevice(deviceId));
     	return "appListPerDevice";
