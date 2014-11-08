@@ -9,6 +9,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.model.Application;
 import com.example.model.Device;
 import com.example.model.Person;
 
@@ -18,11 +19,13 @@ public class DeviceServiceImpl implements DeviceService{
 	@PersistenceContext
     EntityManager em;
 
+	@Override
 	@Transactional
 	public void addDevice(Device device) {
 		em.persist(device);		
 	}
 
+	@Override
 	@Transactional
 	public List<Device> listDevice() {
 		System.err.println("--> Inside Listing Device");
@@ -31,6 +34,7 @@ public class DeviceServiceImpl implements DeviceService{
         return em.createQuery(c).getResultList();
 	}
 
+	@Override
 	@Transactional
 	public void removeDevice(Integer id) {
 		Device device = em.find(Device.class, id);
@@ -39,12 +43,15 @@ public class DeviceServiceImpl implements DeviceService{
         }
 	}
 	
-	/*@Transactional
-	public List<Device> getDevicesByUser(Integer userId) {
-		Person person = em.find(Person.class, userId);
-		if (person != null) {
-			return person.getDevices();
+	@Override
+	@Transactional
+	public List<Application> getApplicationsByDevice(Integer deviceId) {
+		Device device = em.find(Device.class, deviceId);
+		
+		if (device != null) {
+			System.err.println("get application from device serr>>" + device.getApplications().size());
+			return device.getApplications();
 		}
 		return null;
-	}*/
+	}
 }
