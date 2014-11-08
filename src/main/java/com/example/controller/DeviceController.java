@@ -46,6 +46,12 @@ public class DeviceController {
         return "redirect:/people/device/";
     }
     
+    @RequestMapping(value = "/getApplications/{deviceId}", method = RequestMethod.GET)
+    public String getApplications(@PathVariable("deviceId") Integer deviceId, Map<String, Object> map) {
+    	
+    	return "appListPerDevice";
+    }
+    
     @RequestMapping("/people")
     public String redirectToUserPage() {
     	System.err.println("---> Reached inside device page to redirect to User page");

@@ -23,14 +23,6 @@
 </head>
 
 <body>
-<!--  div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a href="/" class="brand">Device</a>
-            <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
-        </div>
-    </div>
-</div-->
 
 <div class="container">
     <div class="row">
@@ -60,6 +52,7 @@
                         <th>Operating System</th>
                         <th>User Id</th>
                         <th>&nbsp;</th>
+                        <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -69,6 +62,7 @@
                             <td>${device.operatingSystem}</td>
                             <td>${device.person.userId} ${device.person.firstName} ${device.person.lastName}</td>
                             <td><form action="delete/${device.deviceId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+                            <td><a href="<c:url value='getApplications/${device.deviceId}'/>">Display Apps</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
