@@ -116,8 +116,9 @@ public class ApplicationController {
     	//, @PathVariable Integer categoryId
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
     	System.err.println(application.getAppName() + ">>>" + application.getDevices() + ">>>" );
-    	
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
+    	
+    	applicationService.save(application);
         
         return "redirect:/people/application/";
     }
