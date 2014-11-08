@@ -36,15 +36,15 @@
 				<table>
 					<tbody>
 						<tr>
-							<td><form:label path="">Device Id</form:label></td>
+							<td>Device Id</td>
 							<td></td>
 						</tr>
 						<tr>
-							<td><form:label path="">Phone Number</form:label></td>
+							<td>Phone Number</td>
 							<td></td>
 						</tr>
 						<tr>
-							<td><form:label path="">Operating System</form:label>
+							<td>Operating System</td>
 							<td></td>
 						</tr>
 					</tbody>
