@@ -57,7 +57,7 @@ public class ApplicationController {
 		else {
 			applicationService.add(application);
 		}
-        return "redirect:/people/application/";
+        return "people/application/";
     }
 
     @RequestMapping("/delete/{appId}")
