@@ -52,6 +52,7 @@ public class PersonController {
     @RequestMapping("/getDevices/{personId}")
     public String getDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
     	
+    	map.put("personDetails", personService.getPerson(personId));
     	map.put("deviceList", personService.getDevicesByUser(personId));
     	
     	return "deviceList";
