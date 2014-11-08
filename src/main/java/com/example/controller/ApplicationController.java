@@ -43,11 +43,12 @@ public class ApplicationController {
     }
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addApplication(@Valid @ModelAttribute("application") Application application, BindingResult result) {
+    public String addApplication(@Valid  Application application, BindingResult result) {
 
 		if (result.hasErrors()) {
 			System.err.println("Throw errors on screen");
 			/*for (FieldError error : result.getAllErrors()) {
+			 * @ModelAttribute("application")
                 errors.put(error.getField(), error.getDefaultMessage());
             }*/
 			return "people/application/";
