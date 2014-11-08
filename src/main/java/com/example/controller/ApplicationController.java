@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -59,11 +60,12 @@ public class ApplicationController {
     	map.put("appDetails" , applicationService.getApp(appId));
     	//map.put("deviceListing", deviceService.listDevice());
     	
+    	deviceCache = new HashMap<Integer, Device>();
     	List<Device> deviceListing = deviceService.listDevice();
-//    	for (Device d : deviceListing) {
-//    		if (d != null)
-//    			deviceCache.put(d.getDeviceId(), d);    		
-//    	}
+    		for (Device d : deviceListing) {
+       			deviceCache.put(d.getDeviceId(), d);    		
+        }
+    	
     	//map.put("deviceListing", deviceCache);
     	map.put("deviceListing", deviceService.listDevice());
     	    	
@@ -88,11 +90,11 @@ public class ApplicationController {
     public void initBinder(WebDataBinder binder) {
     	binder.registerCustomEditor(List.class, "devices", new CustomCollectionEditor(List.class) {
     		protected Object convertElement(Object element) {
-    			System.err.println("Inside binder"  + element.toString());
+    			System.err.println("Inside binder "  + element.toString());
     			if (element instanceof String) {
     				System.err.println("Element is String");
     				Device device = deviceCache.get(Integer.valueOf(element.toString()));
-    				System.err.println("Reached here");
+    				System.err.println("Reached here" );
     				//return deviceService.listDevice().get(0);
     				return device;
     			}
