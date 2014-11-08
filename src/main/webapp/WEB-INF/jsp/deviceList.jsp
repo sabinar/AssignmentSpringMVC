@@ -23,6 +23,14 @@
 </head>
 
 <body>
+<!--  div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a href="/" class="brand">Device</a>
+            <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
+        </div>
+    </div>
+</div-->
 
 <div class="container">
     <div class="row">
@@ -35,21 +43,10 @@
 
 				<table>
 					<tbody>
-					
-						<tr>
-							<td><form:label path="personId">User Id</form:label></td>
-							<td><form:input path="personId" value="${personDetails.userId}"/></td>
-						</tr>
 						<tr>
 							<td><form:label path="firstName">First Name</form:label></td>
 							<td><form:input path="firstName" value="${personDetails.firstName}"/></td>
 						</tr>
-
-						<tr>
-							<td><form:label path="email">Email</form:label></td>
-							<td><form:input path="email" value="${personDetails.email}" /></td>
-						</tr>
-
 					</tbody>
 				</table>
 
