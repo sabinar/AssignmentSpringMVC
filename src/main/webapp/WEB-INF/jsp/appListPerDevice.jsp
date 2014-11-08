@@ -38,16 +38,16 @@
 				<table>
 					<tbody>
 						<tr>
-							<td>Device Id</td>
+							<td><form:label path="deviceId">Device Id</form:label></td>
 							<td><form:label path="deviceId" value="${device.deviceId}"></form:label></td>
 						</tr>
 						<tr>
-							<td>Phone Number</td>
-							<td></td>
+							<td><form:label path="phoneNumber">Phone Number</form:label></td>
+							<td><form:label path="phoneNumber" value="${device.phoneNumber}"></form:label></td>
 						</tr>
 						<tr>
-							<td>Operating System</td>
-							<td></td>
+							<td><form:label path="operatingSystem">Operating System</form:label></td>
+							<td><form:label path="operatingSystem" value="${device.operatingSystem}"></form:label></td>
 						</tr>
 					</tbody>
 				</table>
