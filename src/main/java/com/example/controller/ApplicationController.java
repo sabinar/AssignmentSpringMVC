@@ -103,7 +103,7 @@ public class ApplicationController {
         return "redirect:/people/application/";
     }
     
-    @RequestMapping("/backToapplication")
+    @RequestMapping("/addDevice/backToapplication")
     public String redirectToUserPage() {
     	return "redirect:/people/application/";
     }
