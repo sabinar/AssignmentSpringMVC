@@ -51,6 +51,7 @@ public class ApplicationController {
 			 * @ModelAttribute("application")
                 errors.put(error.getField(), error.getDefaultMessage());
             }*/
+			System.err.println(result.getErrorCount() + result.getObjectName());
 			return "people/application/";
 		}
 		else {
