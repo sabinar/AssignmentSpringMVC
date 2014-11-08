@@ -88,7 +88,8 @@
 	                </table>
 	            </c:if>
 	            
-	            <input type="submit" value="Back" class="btn"/>
+	            <!-- input type="submit" value="Back" class="btn"/-->
+	            <a href="<c:url value='/people/' />">Back</a>
             </form:form>
         </div>
     </div>
