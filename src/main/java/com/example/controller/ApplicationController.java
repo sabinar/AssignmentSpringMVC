@@ -88,15 +88,19 @@ public class ApplicationController {
     public void initBinder(WebDataBinder binder) {
     	binder.registerCustomEditor(List.class, "devices", new CustomCollectionEditor(List.class) {
     		protected Object convertElement(Object element) {
-    			System.err.println("Inside binder");
+    			System.err.println("Inside binder"  + element.toString());
     			if (element instanceof String) {
+    				System.err.println("Element is String");
     				Device device = deviceCache.get(Integer.valueOf(element.toString()));
     				System.err.println("Reached here");
     				//return deviceService.listDevice().get(0);
     				return device;
     			}
+    			if (element instanceof Integer) {
+    				System.err.println("Element is Integer");
+    			}
     			if (element instanceof Device) {
-    				System.err.println("Same eleemnt");
+    				System.err.println("Element is device");
     				return element;
     			}
     			return null;
