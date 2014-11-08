@@ -24,6 +24,8 @@ import com.example.service.DeviceService;
 @RequestMapping("/application")
 public class ApplicationController {
 
+	private Map<Integer, Device> deviceCache;
+	
 	@Autowired
 	private ApplicationService applicationService;
 	
@@ -47,19 +49,14 @@ public class ApplicationController {
 
     @RequestMapping("/delete/{appId}")
     public String deleteApplication(@PathVariable("appId") Integer appId) {
-
         applicationService.delete(appId);
         return "redirect:/people/application/";
     }
     
-    private Map<Integer, Device> deviceCache;
     
     @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.GET)
     public String addDevice(@PathVariable("appId") Integer appId, Map<String, Object> map) {
-    	
-    	map.put("appDetails" , applicationService.getApp(appId));
-    	//map.put("deviceListing", deviceService.listDevice());
-    	
+
     	deviceCache = new HashMap<Integer, Device>();
     	List<Device> deviceListing = deviceService.listDevice();
     		for (Device d : deviceListing) {
@@ -67,25 +64,12 @@ public class ApplicationController {
         }
     	
     	//map.put("deviceListing", deviceCache);
+       	map.put("appDetails" , applicationService.getApp(appId));
     	map.put("deviceListing", deviceService.listDevice());
     	    	
     	return "addDeviceToApp";
     }
     
-   /* @RequestMapping(value = "/updateApp", method = RequestMethod.POST)
-    public void updateAppWithDevice(@ModelAttribute("application") Application application,
-    		 		BindingResult result, @PathVariable Integer deviceId) {
-    	
-    	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    	//return "addDeviceToApp";
-    }*/
-    
-    /*@RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.POST)
-    public void updateAppWithDevice(@ModelAttribute("appDetails") Application application, BindingResult result) {
-
-    	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    }*/
-	
     @InitBinder
     public void initBinder(WebDataBinder binder) {
     	binder.registerCustomEditor(List.class, "devices", new CustomCollectionEditor(List.class) {
@@ -93,13 +77,11 @@ public class ApplicationController {
     			System.err.println("Inside binder "  + element.toString());
     			if (element instanceof String) {
     				System.err.println("Element is String");
-    				Device device = deviceCache.get(Integer.valueOf(element.toString()));
-    				System.err.println("Reached here" );
-    				//return deviceService.listDevice().get(0);
-    				return device;
+    				return deviceCache.get(Integer.valueOf(element.toString()));
     			}
     			if (element instanceof Integer) {
     				System.err.println("Element is Integer");
+    				return deviceCache.get(element);
     			}
     			if (element instanceof Device) {
     				System.err.println("Element is device");
@@ -113,13 +95,15 @@ public class ApplicationController {
     @RequestMapping(value = "/addDevice/mapping", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("appDetails") Application application, 
     		BindingResult result) {
-    	//, @PathVariable Integer categoryId
     	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    	System.err.println(application.getAppName() + ">>>" + application.getDevices() + ">>>" );
-    	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
+    	System.err.println(application.getAppName() + ">>>" + application.getDevices().size() + ">>>" );
     	
     	applicationService.save(application);
-        
         return "redirect:/people/application/";
+    }
+    
+    @RequestMapping("/backToapplication")
+    public String redirectToUserPage() {
+    	return "redirect:/people/application/";
     }
 }

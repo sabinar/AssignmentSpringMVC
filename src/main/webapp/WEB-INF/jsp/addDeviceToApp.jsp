@@ -50,7 +50,7 @@
 						
 						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
-							<td><a href="<c:url value='application' />">Back to Application Page</a></td>
+							<td><a href="<c:url value='backToapplication' />">Back to Application Page</a></td>
 						</tr>		
 					</tbody>
 				</table>
