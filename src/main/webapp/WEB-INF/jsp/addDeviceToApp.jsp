@@ -34,13 +34,12 @@
 				<table>
 					<tbody>
 						<tr>
-						
 							<td><form:label path="appName">Application Name</form:label></td>
-							<td><form:input path="appName" value="${appDetails.appName}"/></td>
+							<td><form:input path="appName" value="${appDetails.appName}" readOnly="true" /></td>
 						</tr>
 						<tr>
 							<td><form:label path="appDesc">Application Description</form:label></td>
-							<td><form:input path="appDesc" value="${appDetails.appDesc}"/></td>
+							<td><form:input path="appDesc" value="${appDetails.appDesc}" readOnly="true" /></td>
 						</tr>
 						
 						<tr>

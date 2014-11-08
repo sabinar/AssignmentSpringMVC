@@ -74,6 +74,23 @@ public class Device {
 		this.applications = applications;
 	}
 	
+	@Override
+	public boolean equals(Object otherDevice) {
+		if (this == otherDevice)
+			return true;
+		if (!(otherDevice instanceof Device))
+			return false;
+		Device device = (Device) otherDevice;
+		if (!device.getDeviceId().equals(this.getDeviceId()))
+			return false;
+		return true;
+	}
 	
+	@Override
+	public int hashCode() {
+		int result;
+		result = getDeviceId().hashCode()*123;
+		return result;
+	}
 	
 }
