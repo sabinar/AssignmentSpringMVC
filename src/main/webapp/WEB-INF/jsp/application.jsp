@@ -32,8 +32,8 @@
             </div>
             <form:form method="post" action="add" commandName="application" class="form-vertical">
             	
-            	<form:errors path="*">
-		            <div><spring:message code="error.global" /></div>
+            	<form:errors path="*" cssClass="errorblock" element="div">
+		           
 		        </form:errors>
             
 				<table>

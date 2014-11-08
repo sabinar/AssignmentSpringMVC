@@ -47,6 +47,10 @@ public class ApplicationController {
 
 		if (result.hasErrors()) {
 			System.err.println("Throw errors on screen");
+			/*for (FieldError error : result.getAllErrors()) {
+                errors.put(error.getField(), error.getDefaultMessage());
+            }*/
+			return "people/application/";
 		}
 		else {
 			applicationService.add(application);
