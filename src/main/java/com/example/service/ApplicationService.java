@@ -11,5 +11,6 @@ public interface ApplicationService {
 	public void delete(Integer appId);
 	
 	public Application getApp(Integer appId);
+	public void save(Application application);
 	
 }

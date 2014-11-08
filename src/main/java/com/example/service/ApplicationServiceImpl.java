@@ -47,5 +47,12 @@ public class ApplicationServiceImpl implements ApplicationService {
 		
 		return em.find(Application.class, appId);
 	}
+	
+	@Override
+	@Transactional
+	public void save(Application application) {
+		em.merge(application);
+		
+	}
 
 }

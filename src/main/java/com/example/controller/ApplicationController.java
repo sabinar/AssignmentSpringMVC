@@ -51,13 +51,20 @@ public class ApplicationController {
         return "redirect:/people/application/";
     }
     
+    private Map<Integer, Device> deviceCache;
+    
     @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.GET)
     public String addDevice(@PathVariable("appId") Integer appId, Map<String, Object> map) {
     	
     	map.put("appDetails" , applicationService.getApp(appId));
-    	map.put("deviceListing", deviceService.listDevice());
-    	map.put("link", "/addDevice/" + appId);
+    	//map.put("deviceListing", deviceService.listDevice());
     	
+    	List<Device> deviceListing = deviceService.listDevice();
+    	for (Device d : deviceListing) {
+    		deviceCache.put(d.getDeviceId(), d);    		
+    	}
+    	map.put("deviceListing", deviceCache);
+    	    	
     	return "addDeviceToApp";
     }
     
@@ -77,11 +84,17 @@ public class ApplicationController {
 	
     @InitBinder
     public void initBinder(WebDataBinder binder) {
-    	binder.registerCustomEditor(List.class, "deviceListing", new CustomCollectionEditor(List.class) {
+    	binder.registerCustomEditor(List.class, "devices", new CustomCollectionEditor(List.class) {
     		protected Object convertElement(Object element) {
     			if (element instanceof String) {
+    				Device device = deviceCache.get(Integer.valueOf(element.toString()));
     				System.err.println("Reached here");
-    				return deviceService.listDevice().get(0);
+    				//return deviceService.listDevice().get(0);
+    				return device;
+    			}
+    			if (element instanceof Device) {
+    				System.err.println("Same eleemnt");
+    				return element;
     			}
     			return null;
     		}
