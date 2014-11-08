@@ -1,5 +1,6 @@
 package com.example.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -26,7 +27,7 @@ public class Application {
 	
 	@ManyToMany (cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "appId") }, inverseJoinColumns = { @JoinColumn(name = "deviceId") })  
-    private List<Device> devices;
+    private List<Device> devices = new ArrayList<Device>();
 
 	public Integer getAppId() {
 		return appId;

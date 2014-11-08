@@ -1,5 +1,6 @@
 package com.example.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -29,7 +30,7 @@ public class Device {
 	private Person person;
 
 	@ManyToMany ( mappedBy = "devices")
-	private List<Application> applications;
+	private List<Application> applications = new ArrayList<Application>();
 	
 
 	public Integer getDeviceId() {
