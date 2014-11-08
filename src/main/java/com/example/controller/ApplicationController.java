@@ -45,7 +45,12 @@ public class ApplicationController {
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addApplication(@Valid @ModelAttribute("application") Application application, BindingResult result) {
 
-        applicationService.add(application);
+		if (result.hasErrors()) {
+			System.err.println("Throw errors on screen");
+		}
+		else {
+			applicationService.add(application);
+		}
         return "redirect:/people/application/";
     }
 
