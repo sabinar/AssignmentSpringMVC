@@ -19,7 +19,11 @@
     -->
     <link href="http://heroku.github.com/template-app-bootstrap/heroku.css" rel="stylesheet">
     <!-- /// -->
-
+    <style>
+		.error {
+			color: #ff0000;
+		}    
+    </style>
 </head>
 
 <body>
@@ -36,15 +40,18 @@
 						<tr>
 							<td><form:label path="phoneNumber">Phone number</form:label></td>
 							<td><form:input path="phoneNumber" /></td>
+							<td><form:errors path="phoneNumber" cssClass="error" /></td>
 						</tr>
 							
 						<tr>
 							<td><form:label path="operatingSystem">Operating System</form:label></td>
 							<td><form:input path="operatingSystem" /></td>
+							<td><form:errors path="operatingSystem" cssClass="error" /></td>
 						</tr>
 						<tr>
 							<td><form:label path="person.userId">User Id</form:label></td>
 							<td><form:input path="person.userId" /></td>
+							<td><form:errors path="person.userId" cssClass="error" /></td>
 						</tr>
 						<tr>
 							<td><input type="submit" value="Add Device" class="btn"/></td>

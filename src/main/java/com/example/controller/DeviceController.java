@@ -25,15 +25,16 @@ public class DeviceController {
     	
     	map.put("device", new Device());
         map.put("deviceList", deviceService.listDevice());
-
         return "device";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addDevice(@ModelAttribute("device") Device device, BindingResult result) {
-
+    public String addDevice(@ModelAttribute("device") Device device, BindingResult result, Map<String, Object> map) {
+    	if (result.hasErrors()) {
+    		map.put("deviceList", deviceService.listDevice());
+			return "device";
+		}
         deviceService.addDevice(device);
-
         return "redirect:/people/device/";
     }
 

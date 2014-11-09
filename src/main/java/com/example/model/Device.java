@@ -3,28 +3,33 @@ package com.example.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Device {
 
 	@Id
 	@GeneratedValue
-	//@Column(name = "DEVICE_ID")
 	private Integer deviceId;
 	
-	
+	@NotEmpty
+	@Size (min=0, max=10)
+	@Pattern(regexp="(^$|[0-9]{10})")
 	private String phoneNumber;
 	
+	@NotEmpty
 	private String operatingSystem;
 	
+	@NotEmpty
 	@ManyToOne
 	@JoinColumn(name="userId")
 	private Person person;
