@@ -2,6 +2,7 @@ package com.example.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Person {
     @Email(message = "Please enter valid email")
     private String email;
     
-    @OneToMany
+    @OneToMany(cascade={CascadeType.ALL})
     @JoinColumn (name = "deviceId")
     private List<Device> devices; 
 
