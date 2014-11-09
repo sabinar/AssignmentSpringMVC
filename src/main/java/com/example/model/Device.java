@@ -29,7 +29,6 @@ public class Device {
 	@NotEmpty
 	private String operatingSystem;
 	
-	@NotEmpty
 	@ManyToOne
 	@JoinColumn(name="userId")
 	private Person person;
