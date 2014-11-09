@@ -31,7 +31,7 @@ public class Device {
 	@NotEmpty
 	private String operatingSystem;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="userId")
 	private Person person;
 
