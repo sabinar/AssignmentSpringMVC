@@ -43,7 +43,7 @@ public class ApplicationController {
     }
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addApplication(@Valid  Application application, BindingResult result) {
+    public String addApplication(@Valid @ModelAttribute("application") Application application, BindingResult result, Map<String, Object> map) {
 
 		if (result.hasErrors()) {
 			System.err.println("Throw errors on screen");
@@ -51,6 +51,7 @@ public class ApplicationController {
 			 * @ModelAttribute("application")
                 errors.put(error.getField(), error.getDefaultMessage());
             }*/
+			map.put("applicationList", applicationService.list());
 			System.err.println(result.getErrorCount() + result.getObjectName());
 			return "application";
 		}

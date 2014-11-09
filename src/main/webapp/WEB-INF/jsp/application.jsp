@@ -32,20 +32,19 @@
             </div>
             <form:form method="post" action="add" commandName="application" class="form-vertical">
             	
-            	<form:errors path="*" cssClass="errorblock" element="div">
-		           
-		        </form:errors>
+            	
             
 				<table>
 					<tbody>
 						<tr>
 							<td><form:label path="appName">Application Name</form:label></td>
-							<td><form:input path="appName" /><form:errors path="appName" cssClass="error" /></td>
-							
+							<td><form:input path="appName" /></td>
+							<td><form:errors path="appName" cssClass="error" /></td>
 						</tr>
 						<tr>
 							<td><form:label path="appDesc">Application Description</form:label></td>
 							<td><form:input path="appDesc" /></td>
+							<td></td>
 						</tr>
 						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
