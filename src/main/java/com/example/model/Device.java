@@ -35,9 +35,6 @@ public class Device {
 	@JoinColumn(name="userId")
 	private Person person;
 
-	//@ManyToMany ( mappedBy = "devices")
-	//@ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER) , mappedBy = "devices"
-    //@JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "deviceId") }, inverseJoinColumns = { @JoinColumn(name = "appId") })
 	@ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "deviceId") }, inverseJoinColumns = { @JoinColumn(name = "appId") })
     private List<Application> applications = new ArrayList<Application>();
