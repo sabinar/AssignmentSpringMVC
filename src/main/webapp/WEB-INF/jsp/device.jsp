@@ -75,7 +75,7 @@
                         <tr>
                             <td>${device.phoneNumber}</td>
                             <td>${device.operatingSystem}</td>
-                            <td>${device.person.userId} ${device.person.firstName} ${device.person.lastName}</td>
+                            <td>${device.person.userId} ${device.person.name}</td>
                             <td><form action="delete/${device.deviceId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
                             <td><a href="<c:url value='getApplications/${device.deviceId}'/>">Display Apps</a></td>
                         </tr>
