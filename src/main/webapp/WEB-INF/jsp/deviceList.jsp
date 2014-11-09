@@ -23,14 +23,6 @@
 </head>
 
 <body>
-<!--  div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a href="/" class="brand">Device</a>
-            <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
-        </div>
-    </div>
-</div-->
 
 <div class="container">
     <div class="row">
@@ -50,13 +42,8 @@
 						</tr>
 						
 						<tr>
-							<td><form:label path="firstName"></form:label>First Name</td>
-							<td><form:input path="firstName" value="${firstName}" readonly="true"/>
-						</tr>
-						
-						<tr>
-							<td><form:label path="lastName"></form:label>Last Name</td>
-							<td><form:input path="lastName" value="${lastName}" readonly="true"/>
+							<td><form:label path="name"></form:label>Name</td>
+							<td><form:input path="name" value="${name}" readonly="true"/>
 						</tr>
 						
 						<tr>

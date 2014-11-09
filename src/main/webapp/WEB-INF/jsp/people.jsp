@@ -19,18 +19,15 @@
     -->
     <link href="http://heroku.github.com/template-app-bootstrap/heroku.css" rel="stylesheet">
     <!-- /// -->
-
+    <style>
+		.error {
+			color: #ff0000;
+		}    
+    </style>
 </head>
 
 <body>
-<!--  div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a href="/" class="brand">Spring MVC and Hibernate Template</a>
-            <a href="/" class="brand" id="heroku">by <strong>heroku</strong></a>
-        </div>
-    </div>
-</div-->
+
 
 <div class="container">
     <div class="row">
@@ -40,19 +37,12 @@
             </div>
             <form:form method="post" action="add" commandName="person" class="form-vertical">
 
-				<form:errors path="*" cssClass="errorblock" element="div"></form:errors>
-
 				<table>
 					<tbody>
 						<tr>
-							<td><form:label path="firstName">First Name</form:label></td>
-							<td><form:input path="firstName" /></td>
-							<td><form:errors path="firstName" cssClass="error" /></td>
-						</tr>
-						<tr>
-							<td><form:label path="lastName">Last Name</form:label></td>
-							<td><form:input path="lastName" /></td>
-							<td></td>
+							<td><form:label path="name">Name</form:label></td>
+							<td><form:input path="name" /></td>
+							<td><form:errors path="name" cssClass="error" /></td>
 						</tr>
 						<tr>
 							<td><form:label path="email">Email</form:label></td>
@@ -90,7 +80,7 @@
                     <c:forEach items="${peopleList}" var="person">
                         <tr>
                         	<td>${person.userId} </td>
-                            <td>${person.lastName}, ${person.firstName}</td>
+                            <td>${person.name}</td>
                             <td>${person.email}</td>
                             <td><form action="delete/${person.userId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
                             <td><a href="<c:url value='getDevices/${person.userId}'/>">Display</a></td>

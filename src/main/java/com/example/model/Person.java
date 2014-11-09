@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 public class Person {
 
@@ -18,11 +20,10 @@ public class Person {
     @GeneratedValue
     private Integer userId;
 
-    @NotNull(message = "Please enter name")
-    private String firstName;
-
-    private String lastName;
+    @NotEmpty(message = "Please enter name")
+    private String name;
     
+    @NotEmpty
     private String email;
     
     @OneToMany
@@ -38,21 +39,13 @@ public class Person {
         this.userId = userId;
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public String getName() {
+		return name;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String getEmail() {
 		return email;

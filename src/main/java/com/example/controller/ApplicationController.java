@@ -46,19 +46,13 @@ public class ApplicationController {
     public String addApplication(@Valid @ModelAttribute("application") Application application, BindingResult result, Map<String, Object> map) {
 
 		if (result.hasErrors()) {
-			System.err.println("Throw errors on screen");
-			/*for (FieldError error : result.getAllErrors()) {
-			 * @ModelAttribute("application")
-                errors.put(error.getField(), error.getDefaultMessage());
-            }*/
 			map.put("applicationList", applicationService.list());
-			System.err.println(result.getErrorCount() + result.getObjectName());
 			return "application";
 		}
 		else {
 			applicationService.add(application);
+			return "redirect:/people/application/";
 		}
-        return "redirect:/people/application/";
     }
 
     @RequestMapping("/delete/{appId}")
