@@ -48,7 +48,11 @@
 							<td><form:input path="operatingSystem" /></td>
 							<td><form:errors path="operatingSystem" cssClass="error" /></td>
 						</tr>
-						
+						<tr>
+							<td><form:label path="person.userId">User Id</form:label></td>
+							<td><form:input path="person.userId" /></td>
+							<td><form:errors path="person.userId" cssClass="error" /></td>
+						</tr>
 						<tr>
 							<td><input type="submit" value="Add Device" class="btn"/></td>
 							<td><a href="<c:url value='people' />">Back to User Page</a></td>

@@ -25,8 +25,8 @@ public class Person {
     @Email(message = "Please enter valid email")
     private String email;
     
-    //@OneToMany (mappedBy = "person")
-    @JoinColumn (name = "deviceId", referencedColumnName = "userId")
+    @OneToMany (mappedBy = "person")
+    @JoinColumn (name = "deviceId")
     private List<Device> devices; 
 
     

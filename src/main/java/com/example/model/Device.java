@@ -31,9 +31,9 @@ public class Device {
 	@NotEmpty
 	private String operatingSystem;
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name="userId")
-	private Person person;*/
+	private Person person;
 
 	@ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE })
 	@JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "deviceId") }, inverseJoinColumns = { @JoinColumn(name = "appId") })
@@ -65,13 +65,13 @@ public class Device {
 	}
 
 
-	/*public Person getPerson() {
+	public Person getPerson() {
 		return person;
 	}
 
 	public void setPerson(Person person) {
 		this.person = person;
-	}*/
+	}
 
 	public List<Application> getApplications() {
 		return applications;
