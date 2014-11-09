@@ -27,7 +27,7 @@ public class Application {
 	
 	private String appDesc;
 	
-	@ManyToMany (cascade= CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
     @JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "appId") }, inverseJoinColumns = { @JoinColumn(name = "deviceId") })  
     private List<Device> devices = new ArrayList<Device>();
 
