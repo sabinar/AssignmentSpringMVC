@@ -52,12 +52,12 @@ public class ApplicationController {
                 errors.put(error.getField(), error.getDefaultMessage());
             }*/
 			System.err.println(result.getErrorCount() + result.getObjectName());
-			return "people/application/";
+			return "people/application";
 		}
 		else {
 			applicationService.add(application);
 		}
-        return "people/application/";
+        return "redirect:/people/application/";
     }
 
     @RequestMapping("/delete/{appId}")
