@@ -13,6 +13,8 @@ import com.example.service.DeviceService;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/device")
 public class DeviceController {
@@ -29,7 +31,7 @@ public class DeviceController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addDevice(@ModelAttribute("device") Device device, BindingResult result, Map<String, Object> map) {
+    public String addDevice(@Valid @ModelAttribute("device") Device device, BindingResult result, Map<String, Object> map) {
     	if (result.hasErrors()) {
     		map.put("deviceList", deviceService.listDevice());
 			return "device";
