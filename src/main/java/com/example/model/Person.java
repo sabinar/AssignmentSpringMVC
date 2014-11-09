@@ -1,16 +1,14 @@
 package com.example.model;
 
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -23,7 +21,8 @@ public class Person {
     @NotEmpty(message = "Please enter name")
     private String name;
     
-    @NotEmpty
+    @NotEmpty(message = "Please enter email")
+    @Email(message = "Please enter valid email")
     private String email;
     
     @OneToMany
