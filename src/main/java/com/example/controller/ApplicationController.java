@@ -52,7 +52,7 @@ public class ApplicationController {
                 errors.put(error.getField(), error.getDefaultMessage());
             }*/
 			System.err.println(result.getErrorCount() + result.getObjectName());
-			return "people/application";
+			return "application";
 		}
 		else {
 			applicationService.add(application);
