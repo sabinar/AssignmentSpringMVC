@@ -22,8 +22,7 @@ public class Device {
 	private Integer deviceId;
 	
 	@NotEmpty
-	@Size (min=0, max=10)
-	@Pattern(regexp="(^$|[0-9]{10})")
+	@Pattern(regexp="[\\d]{10}")
 	private String phoneNumber;
 	
 	@NotEmpty
