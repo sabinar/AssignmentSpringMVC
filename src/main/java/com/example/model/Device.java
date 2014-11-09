@@ -91,8 +91,8 @@ public class Device {
 	
 	@Override
 	public int hashCode() {
-		int result;
-		result = getDeviceId().hashCode()*123;
+		int result = 123;
+		result = this.getDeviceId().hashCode()*123;
 		return result;
 	}
 	
