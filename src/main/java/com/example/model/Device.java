@@ -31,7 +31,7 @@ public class Device {
 	@NotEmpty
 	private String operatingSystem;
 	
-	@ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE })
+	@ManyToOne
 	@JoinColumn(name="userId")
 	private Person person;
 

@@ -25,7 +25,7 @@ public class Person {
     @Email(message = "Please enter valid email")
     private String email;
     
-    @OneToMany
+    @OneToMany 
     @JoinColumn (name = "deviceId")
     private List<Device> devices; 
 
