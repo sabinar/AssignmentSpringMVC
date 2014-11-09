@@ -92,7 +92,7 @@ public class Device {
 	@Override
 	public int hashCode() {
 		int result = 123;
-		result = this.getDeviceId().hashCode()*123;
+		result = result * ((this.getDeviceId() != null) ? this.getDeviceId().hashCode(): 1);
 		return result;
 	}
 	
