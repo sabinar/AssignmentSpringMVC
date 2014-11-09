@@ -3,10 +3,13 @@ package com.example.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Pattern;
@@ -32,8 +35,10 @@ public class Device {
 	@JoinColumn(name="userId")
 	private Person person;
 
-	@ManyToMany ( mappedBy = "devices")
-	private List<Application> applications = new ArrayList<Application>();
+	//@ManyToMany ( mappedBy = "devices")
+	@ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
+    @JoinTable(name = "device_application", joinColumns = { @JoinColumn(name = "deviceId") }, inverseJoinColumns = { @JoinColumn(name = "appId") })  
+    private List<Application> applications = new ArrayList<Application>();
 	
 
 	public Integer getDeviceId() {
