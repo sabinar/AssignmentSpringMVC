@@ -37,6 +37,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 	public void delete(Integer appId) {
 		Application application = em.find(Application.class, appId);
         if (null != application) {
+        	System.err.println(">>> deleting appl " + appId);
             em.remove(application);
         }		
 	}
