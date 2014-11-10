@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.model.Device;
 import com.example.service.DeviceService;
-import com.example.service.PersonService;
 
 import java.util.Map;
 
@@ -23,8 +22,6 @@ public class DeviceController {
     @Autowired
     private DeviceService deviceService;
     
-    @Autowired
-    private PersonService personService;
 
     @RequestMapping("/")
     public String listDevice(Map<String, Object> map) {
@@ -82,35 +79,5 @@ public class DeviceController {
     }
     
     
-    @RequestMapping("/addDevices/backToUserListing")
-    public String redirectToUserListing() {
-    	return "redirect:/people/";
-    }
-    
-    @RequestMapping(value = "/addDevices/{personId}", method = RequestMethod.GET)
-    public String addDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
-    	
-    	map.put("personDetails", personService.getPerson(personId));
-    	map.put("deviceDetails", new Device());
-    	
-    	return "addDeviceToUser";
-    }
-    
-    
-    @RequestMapping(value = "/addDevices/addDeviceToUser/{personId}", method = RequestMethod.POST)
-    public String addDeviceToUser(@Valid @ModelAttribute("deviceDetails") Device device, 
-    		BindingResult result,
-    		@PathVariable("personId") Integer personId,
-    		Map<String, Object> map) {
-    	
-    	System.err.println("adding device to user " + personId);
-    	if (result.hasErrors()) {
-    		map.put("personDetails", personService.getPerson(personId));
-        	map.put("deviceDetails", new Device());
-    		return "redirect:/addDeviceToUser";
-		}
-        //personService.addPerson(person);
-        return "redirect:/people/";
-    }
     
 }
