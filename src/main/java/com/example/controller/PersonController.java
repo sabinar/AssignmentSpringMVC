@@ -138,9 +138,9 @@ public class PersonController {
     	System.err.println("Request: " + req.getRequestURL() + " raised " + exception);
 
         ModelAndView mav = new ModelAndView();
-        mav.addObject("exception", exception);
+        mav.addObject("errors", exception);
         mav.addObject("url", req.getRequestURL());
-        mav.setViewName("error");
+        mav.setViewName("people");
         return mav;
     }
     
