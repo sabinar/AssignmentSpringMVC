@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.model.Device;
 import com.example.model.Person;
@@ -95,14 +96,17 @@ public class PersonController {
     public String addDeviceToUser(@Valid @ModelAttribute("deviceDetails") Device device, 
     		BindingResult result,
     		@PathVariable("personId") Integer personId,
+    		final RedirectAttributes redirectAttributes,
     		Map<String, Object> map) {
     	
     	System.err.println("adding device to user " + personId);
     	Person person = personService.getPerson(personId);
     	if (result.hasErrors()) {
     		System.err.println(">>> There are some errors");
+    		redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.deviceDetails", result);;
+            redirectAttributes.addFlashAttribute("deviceDetails", device);
     		map.put("personDetails", person);
-        	map.put("deviceDetails", new Device());
+        	//map.put("deviceDetails", new Device());
     		return "";
 		}
         //personService.addPerson(person);
