@@ -34,36 +34,19 @@
             <div class="page-header">
                 <h1>Device page</h1>
             </div>
-            <form:form method="post" action="add" commandName="device" class="form-vertical">
-				<table>
-					<tbody>
-						<tr>
-							<td><form:label path="phoneNumber">Phone number</form:label></td>
-							<td><form:input path="phoneNumber" /></td>
-							<td><form:errors path="phoneNumber" cssClass="error" /></td>
-						</tr>
-							
-						<tr>
-							<td><form:label path="operatingSystem">Operating System</form:label></td>
-							<td><form:input path="operatingSystem" /></td>
-							<td><form:errors path="operatingSystem" cssClass="error" /></td>
-						</tr>
-						<tr>
-							<td><form:label path="person.userId">User Id</form:label></td>
-							<td><form:input path="person.userId" /></td>
-							<td><form:errors path="person.userId" cssClass="error" /></td>
-						</tr>
-						<tr>
-							<td><input type="submit" value="Add Device" class="btn"/></td>
-							<td><a href="<c:url value='people' />">Back to User Page</a></td>
-						</tr>
-						<tr>
-							<td colspan=2><a href="<c:url value='appListPage' />">All Application List</a></td>
-						</tr>
-					</tbody>
-				</table>
-            </form:form>
-
+            
+            <table>
+            	<tbody>
+            		<tr>
+            			<td colspan="2">To add device, please visit user listing page</td>
+            		</tr>
+            		<tr>
+            			<td><a href="<c:url value='people' />">User List</a></td>
+            			<td><a href="<c:url value='appListPage' />">Application List</a></td>
+            		</tr>
+            	</tbody>
+            </table>
+            
 
             <c:if  test="${!empty deviceList}">
                 <h3>Devices</h3>
