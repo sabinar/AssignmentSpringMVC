@@ -23,6 +23,9 @@ public class PersonController {
     @Autowired
     private PersonService personService;
     
+    @Autowired
+    private DeviceService deviceService;
+    
     @RequestMapping("/")
     public String listPeople(Map<String, Object> map) {
         map.put("person", new Person());
@@ -95,12 +98,15 @@ public class PersonController {
     		Map<String, Object> map) {
     	
     	System.err.println("adding device to user " + personId);
+    	Person person = personService.getPerson(personId);
     	if (result.hasErrors()) {
-    		map.put("personDetails", personService.getPerson(personId));
+    		map.put("personDetails", person);
         	map.put("deviceDetails", new Device());
     		return "redirect:/addDeviceToUser";
 		}
         //personService.addPerson(person);
+    	device.setPerson(person);
+    	deviceService.addDevice(device);
         return "redirect:/people/";
     }
    
