@@ -47,7 +47,7 @@
 						</tr>
 						
 						<tr>
-							<td><input type="submit" value="Add Application" class="btn"/></td>
+							<td><input type="submit" value="Add Device" class="btn"/></td>
 							<td><a href="<c:url value='people' />">Back to User Listing</a></td>
 						</tr>		
 					</tbody>
