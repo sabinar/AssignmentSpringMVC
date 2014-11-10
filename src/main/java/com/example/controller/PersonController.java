@@ -90,10 +90,11 @@ public class PersonController {
     		@PathVariable("personId") Integer personId,
     		Map<String, Object> map) {
     	
-    	System.err.println("adding device to user");
+    	System.err.println("adding device to user " + personId);
     	if (result.hasErrors()) {
-    		//map.put("peopleList", personService.listPeople());
-			//return "people";
+    		map.put("personDetails", personService.getPerson(personId));
+        	map.put("deviceDetails", new Device());
+    		return "people";
 		}
         //personService.addPerson(person);
         return "redirect:/people/";
