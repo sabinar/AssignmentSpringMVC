@@ -62,7 +62,9 @@
                 
             </form:form>
 
-
+			<form:errors path="*" cssClass="error" element="div">
+                    
+                  </form:errors>
 			
             <c:if  test="${!empty peopleList}">
                 <h3>People</h3>
