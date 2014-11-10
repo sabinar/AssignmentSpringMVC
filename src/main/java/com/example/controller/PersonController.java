@@ -90,13 +90,15 @@ public class PersonController {
     		System.err.println("SDfsfsdfds");
             map.put("org.springframework.validation.BindingResult.deviceDetails",
                     map.get("deviceDetailsResult"));
+            System.err.println(map.containsKey("deviceDetails"));
         }
     	else {
     		System.err.println("aaaaaa");
+    		map.put("deviceDetails", new Device());
     	}
     	
     	map.put("personDetails", personService.getPerson(personId));
-    	map.put("deviceDetails", new Device());
+    	//map.put("deviceDetails", new Device());
     	
     	return "addDeviceToUser";
     }
