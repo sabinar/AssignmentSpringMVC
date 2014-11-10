@@ -127,12 +127,13 @@ public class PersonController {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public String handleError() {
     	System.err.println("Catch exception");
-    	Map<String, Object> map = new HashMap<String, Object>();
-    	map.put("errors", "wrong");
-        map.put("person", new Person());
-        map.put("peopleList", personService.listPeople());
-
-    	return "people";
+    	return "";
+//    	Map<String, Object> map = new HashMap<String, Object>();
+//    	map.put("errors", "wrong");
+//        map.put("person", new Person());
+//        map.put("peopleList", personService.listPeople());
+//
+//    	return "people";
     }
     
     
