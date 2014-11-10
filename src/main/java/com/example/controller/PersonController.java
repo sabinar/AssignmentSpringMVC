@@ -18,6 +18,7 @@ import com.example.service.PersonService;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
@@ -123,8 +124,10 @@ public class PersonController {
    
     
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public String handleError() {
+    public String handleError(HttpServletRequest req, Exception exception, Map<String, Object> map) {
     	System.err.println("Catch exception");
+    	System.err.println("Request: " + req.getRequestURL() + " raised " + exception);
+    	//map.put("error")
     	return "dummy";
     }
     
