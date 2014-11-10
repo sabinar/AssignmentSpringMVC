@@ -94,7 +94,7 @@ public class PersonController {
     	if (result.hasErrors()) {
     		map.put("personDetails", personService.getPerson(personId));
         	map.put("deviceDetails", new Device());
-    		return "people";
+    		return "addDeviceToUser";
 		}
         //personService.addPerson(person);
         return "redirect:/people/";
