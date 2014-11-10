@@ -107,7 +107,7 @@ public class PersonController {
             redirectAttributes.addFlashAttribute("deviceDetails", device);
     		map.put("personDetails", person);
         	//map.put("deviceDetails", new Device());
-    		return "";
+    		return "redirect:/people//addDevices/" + personId;
 		}
         //personService.addPerson(person);
     	device.setPerson(person);
