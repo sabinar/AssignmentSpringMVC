@@ -85,6 +85,16 @@ public class PersonController {
     @RequestMapping(value = "/addDevices/{personId}", method = RequestMethod.GET)
     public String addDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
     	
+    	if (map.containsKey("deviceDetailsResuls"))
+        {
+    		System.err.println("SDfsfsdfds");
+            //map.put("org.springframework.validation.BindingResult.deviceDetails",
+              //      model.asMap().get("exampleFormBindingResult"));
+        }
+    	else {
+    		System.err.println("aaaaaa");
+    	}
+    	
     	map.put("personDetails", personService.getPerson(personId));
     	map.put("deviceDetails", new Device());
     	
@@ -101,8 +111,8 @@ public class PersonController {
     	System.err.println("adding device to user " + personId);
     	Person person = personService.getPerson(personId);
     	if (result.hasErrors()) {
-    		System.err.println(">>> There are some errors");
-    		redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.deviceDetails", result);;
+    		System.err.println(">>> There are some errors");//org.springframework.validation.BindingResult.deviceDetails
+    		redirectAttributes.addFlashAttribute("deviceDetailsResuls", result);;
             redirectAttributes.addFlashAttribute("deviceDetails", device);
     		//map.put("personDetails", person);,    		Map<String, Object> map
         	//map.put("deviceDetails", new Device());
