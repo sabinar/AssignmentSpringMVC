@@ -124,11 +124,14 @@ public class PersonController {
    
     
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public String handleError(HttpServletRequest req, Exception exception, Map<String, Object> map) {
+    public String handleError(HttpServletRequest req, Exception exception) {
     	System.err.println("Catch exception");
     	System.err.println("Request: " + req.getRequestURL() + " raised " + exception);
     	//map.put("error")
-    	return "dummy";
+        //map.put("person", new Person());
+        //map.put("peopleList", personService.listPeople());
+
+    	return "people";
     }
     
     
