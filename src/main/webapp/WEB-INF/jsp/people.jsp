@@ -85,7 +85,7 @@
                             <td>${person.email}</td>
                             <td><form action="delete/${person.userId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
                             <td><a href="<c:url value='getDevices/${person.userId}'/>">Display</a></td>
-                            <td><a href="<c:url value='/device/addDevices/${person.userId}'/>">Add Devices</a></td>
+                            <td><a href="<c:url value='addDevices/${person.userId}'/>">Add Devices</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>
