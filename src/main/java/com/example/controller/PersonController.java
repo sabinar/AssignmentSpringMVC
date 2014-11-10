@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.model.Device;
 import com.example.model.Person;
 import com.example.service.DeviceService;
 import com.example.service.PersonService;
@@ -65,5 +66,14 @@ public class PersonController {
     @RequestMapping("/appListPage")
     public String redirectToApplicationList() {
     	return "redirect:/people/application/";
+    }
+    
+    @RequestMapping(value = "/addDevices/{personId}", method = RequestMethod.GET)
+    public String addDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
+    	
+    	map.put("personDetails", personService.getPerson(personId));
+    	map.put("deviceDetails", new Device());
+    	
+    	return "addDeviceToUser";
     }
 }
