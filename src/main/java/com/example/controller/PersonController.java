@@ -16,6 +16,7 @@ import com.example.model.Person;
 import com.example.service.DeviceService;
 import com.example.service.PersonService;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -124,8 +125,9 @@ public class PersonController {
    
     
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public String handleError(Map<String, Object> map) {
+    public String handleError() {
     	System.err.println("Catch exception");
+    	Map<String, Object> map = new HashMap<String, Object>();
     	map.put("errors", "wrong");
         map.put("person", new Person());
         map.put("peopleList", personService.listPeople());
