@@ -33,12 +33,22 @@
             <table>
             	<tbody>
             		<tr>
-            			<td colspan="2">To add device, please visit user listing page</td>
+            			<td colspan="2">An error has been encountered! Looks like user has some devices mapped!!!</td>
+            		</tr>
+            		<tr>
+            			<td>Error:</td>
+            			<td>${errors}</td>
+            		</tr>
+            		<tr>
+            			<td colspan="2"></td>
             		</tr>
             		
             	</tbody>
             </table>
             
+            <form method=GET action="/people/">
+            	<input type="submit" value="Back" class="btn"/>
+            </form>
 
             
         </div>
