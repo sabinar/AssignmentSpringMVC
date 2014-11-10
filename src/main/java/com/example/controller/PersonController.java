@@ -82,4 +82,17 @@ public class PersonController {
     	
     	return "addDeviceToUser";
     }
+    
+    
+    @RequestMapping(value = "/addDeviceToUser", method = RequestMethod.POST)
+    public String addDeviceToUser(@Valid @ModelAttribute("device") Device device, BindingResult result, Map<String, Object> map) {
+    	
+    	System.err.println("adding device to user");
+    	if (result.hasErrors()) {
+    		//map.put("peopleList", personService.listPeople());
+			//return "people";
+		}
+        //personService.addPerson(person);
+        return "redirect:/people/";
+    }
 }
