@@ -50,7 +50,7 @@
 				</table>
             </form:form>
             
-             <form:form method="post" action="addDeviceToUser" commandName="deviceDetails" class="form-vertical">
+             <form:form method="post" action="/addDeviceToUser" commandName="deviceDetails" class="form-vertical">
 				<table>
 					<tbody>
 						<tr>
