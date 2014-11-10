@@ -85,11 +85,11 @@ public class PersonController {
     @RequestMapping(value = "/addDevices/{personId}", method = RequestMethod.GET)
     public String addDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
     	
-    	if (map.containsKey("deviceDetailsResuls"))
+    	if (map.containsKey("deviceDetailsResult"))
         {
     		System.err.println("SDfsfsdfds");
-            //map.put("org.springframework.validation.BindingResult.deviceDetails",
-              //      model.asMap().get("exampleFormBindingResult"));
+            map.put("org.springframework.validation.BindingResult.deviceDetails",
+                    map.get("deviceDetailsResult"));
         }
     	else {
     		System.err.println("aaaaaa");
@@ -112,7 +112,7 @@ public class PersonController {
     	Person person = personService.getPerson(personId);
     	if (result.hasErrors()) {
     		System.err.println(">>> There are some errors");//org.springframework.validation.BindingResult.deviceDetails
-    		redirectAttributes.addFlashAttribute("deviceDetailsResuls", result);;
+    		redirectAttributes.addFlashAttribute("deviceDetailsResult", result);;
             redirectAttributes.addFlashAttribute("deviceDetails", device);
     		//map.put("personDetails", person);,    		Map<String, Object> map
         	//map.put("deviceDetails", new Device());
