@@ -1,8 +1,10 @@
 package com.example.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -119,6 +121,12 @@ public class PersonController {
         return "redirect:/people/";
     }
    
+    
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public String handleError() {
+    	System.err.println("Catch exception");
+    	return "dummy";
+    }
     
     
 }

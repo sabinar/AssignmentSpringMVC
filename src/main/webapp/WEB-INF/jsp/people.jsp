@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Spring MVC and Hibernate Template</title>
+    <title>User Listing Page</title>
 
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,8 +53,8 @@
 							<td colspan="3"><input type="submit" value="Add Person" class="btn"/></td>
 						</tr>
 						<tr>
-							<td><a href="<c:url value='deviceListPage' />">All Device List</a></td>
-							<td><a href="<c:url value='appListPage' />">All Application List</a></td>
+							<td><a href="<c:url value='deviceListPage' />">Device List</a></td>
+							<td><a href="<c:url value='appListPage' />">Application List</a></td>
 						</tr>
 					</tbody>
 				</table>
