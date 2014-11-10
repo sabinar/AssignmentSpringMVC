@@ -19,7 +19,11 @@
     -->
     <link href="http://heroku.github.com/template-app-bootstrap/heroku.css" rel="stylesheet">
     <!-- /// -->
-
+    <style>
+		.error {
+			color: #ff0000;
+		}    
+    </style>
 </head>
 
 <body>

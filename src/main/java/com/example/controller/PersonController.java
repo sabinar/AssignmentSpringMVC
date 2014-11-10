@@ -114,13 +114,12 @@ public class PersonController {
     	Person person = personService.getPerson(personId);
     	if (result.hasErrors()) {
     		System.err.println(">>> There are some errors " + result.getErrorCount());//org.springframework.validation.BindingResult.deviceDetails
-    		redirectAttributes.addFlashAttribute("deviceDetailsResult", result);;
+    		redirectAttributes.addFlashAttribute("deviceDetailsResult", result);
             redirectAttributes.addFlashAttribute("deviceDetails", device);
     		//map.put("personDetails", person);,    		Map<String, Object> map
         	//map.put("deviceDetails", new Device());
     		return "redirect:/people/addDevices/" + personId;
 		}
-        //personService.addPerson(person);
     	device.setPerson(person);
     	deviceService.addDevice(device);
         return "redirect:/people/";
