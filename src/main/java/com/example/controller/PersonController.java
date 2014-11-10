@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.model.Device;
@@ -125,15 +126,22 @@ public class PersonController {
    
     
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public String handleError(HttpServletRequest req, Exception exception) {
+    public ModelAndView handleError(HttpServletRequest req, Exception exception) {
     	System.err.println("Catch exception");
-    	return "";
+    	//return "";
 //    	Map<String, Object> map = new HashMap<String, Object>();
 //    	map.put("errors", "wrong");
 //        map.put("person", new Person());
 //        map.put("peopleList", personService.listPeople());
 //
 //    	return "people";
+    	System.err.println("Request: " + req.getRequestURL() + " raised " + exception);
+
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("exception", exception);
+        mav.addObject("url", req.getRequestURL());
+        mav.setViewName("error");
+        return mav;
     }
     
     
