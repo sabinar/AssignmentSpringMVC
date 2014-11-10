@@ -25,7 +25,7 @@ public class Device {
 	private Integer deviceId;
 	
 	@NotEmpty
-	@Pattern(regexp="[\\d]{10}")
+	@Pattern(regexp="[\\d]{10}", message = "Please enter valid phone number")
 	private String phoneNumber;
 	
 	@NotEmpty
