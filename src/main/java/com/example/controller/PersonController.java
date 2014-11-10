@@ -96,8 +96,7 @@ public class PersonController {
     public String addDeviceToUser(@Valid @ModelAttribute("deviceDetails") Device device, 
     		BindingResult result,
     		@PathVariable("personId") Integer personId,
-    		final RedirectAttributes redirectAttributes,
-    		Map<String, Object> map) {
+    		final RedirectAttributes redirectAttributes) {
     	
     	System.err.println("adding device to user " + personId);
     	Person person = personService.getPerson(personId);
@@ -105,9 +104,9 @@ public class PersonController {
     		System.err.println(">>> There are some errors");
     		redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.deviceDetails", result);;
             redirectAttributes.addFlashAttribute("deviceDetails", device);
-    		map.put("personDetails", person);
+    		//map.put("personDetails", person);,    		Map<String, Object> map
         	//map.put("deviceDetails", new Device());
-    		return "redirect:/people//addDevices/" + personId;
+    		return "redirect:/people/addDevices/" + personId;
 		}
         //personService.addPerson(person);
     	device.setPerson(person);
