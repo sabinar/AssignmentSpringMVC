@@ -140,10 +140,10 @@ public class PersonController {
         ModelAndView mav = new ModelAndView();
         mav.addObject("errors", exception);
         mav.addObject("url", req.getRequestURL());
-        mav.addObject("person", new Person());
-        mav.addObject("peopleList", personService.listPeople());
+        //mav.addObject("person", new Person());
+        //mav.addObject("peopleList", personService.listPeople());
         
-        mav.setViewName("people");
+        mav.setViewName("error");
         return mav;
     }
     
