@@ -69,36 +69,7 @@ public class PersonController {
     }
     
     
-    @RequestMapping("/addDevices/backToUserListing")
-    public String redirectToUserListing() {
-    	return "redirect:/people/";
-    }
-    
-    @RequestMapping(value = "/addDevices/{personId}", method = RequestMethod.GET)
-    public String addDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
-    	
-    	map.put("personDetails", personService.getPerson(personId));
-    	map.put("deviceDetails", new Device());
-    	
-    	return "addDeviceToUser";
-    }
-    
-    
-    @RequestMapping(value = "/addDevices/addDeviceToUser/{personId}", method = RequestMethod.POST)
-    public String addDeviceToUser(@Valid @ModelAttribute("deviceDetails") Device device, 
-    		BindingResult result,
-    		@PathVariable("personId") Integer personId,
-    		Map<String, Object> map) {
-    	
-    	System.err.println("adding device to user " + personId);
-    	if (result.hasErrors()) {
-    		map.put("personDetails", personService.getPerson(personId));
-        	map.put("deviceDetails", new Device());
-    		return "addDeviceToUser";
-		}
-        //personService.addPerson(person);
-        return "redirect:/people/";
-    }
+   
     
     
 }
