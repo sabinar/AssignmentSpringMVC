@@ -100,6 +100,7 @@ public class PersonController {
     	System.err.println("adding device to user " + personId);
     	Person person = personService.getPerson(personId);
     	if (result.hasErrors()) {
+    		System.err.println(">>> There are some errors");
     		map.put("personDetails", person);
         	map.put("deviceDetails", new Device());
     		return "";
