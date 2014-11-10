@@ -111,7 +111,7 @@ public class PersonController {
     	System.err.println("adding device to user " + personId);
     	Person person = personService.getPerson(personId);
     	if (result.hasErrors()) {
-    		System.err.println(">>> There are some errors");//org.springframework.validation.BindingResult.deviceDetails
+    		System.err.println(">>> There are some errors " + result.getErrorCount());//org.springframework.validation.BindingResult.deviceDetails
     		redirectAttributes.addFlashAttribute("deviceDetailsResult", result);;
             redirectAttributes.addFlashAttribute("deviceDetails", device);
     		//map.put("personDetails", person);,    		Map<String, Object> map
