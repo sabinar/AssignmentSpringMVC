@@ -84,8 +84,11 @@ public class PersonController {
     }
     
     
-    @RequestMapping(value = "/addDevices/addDeviceToUser", method = RequestMethod.POST)
-    public String addDeviceToUser(@Valid @ModelAttribute("deviceDetails") Device device, BindingResult result, Map<String, Object> map) {
+    @RequestMapping(value = "/addDevices/addDeviceToUser/{personId}", method = RequestMethod.POST)
+    public String addDeviceToUser(@Valid @ModelAttribute("deviceDetails") Device device, 
+    		BindingResult result,
+    		@PathVariable("personId") Integer personId,
+    		Map<String, Object> map) {
     	
     	System.err.println("adding device to user");
     	if (result.hasErrors()) {
