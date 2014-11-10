@@ -69,7 +69,7 @@ public class PersonController {
     }
     
     
-    @RequestMapping("/backToUserListing")
+    @RequestMapping("/addDevices/backToUserListing")
     public String redirectToUserListing() {
     	return "redirect:/people/";
     }
@@ -85,7 +85,7 @@ public class PersonController {
     
     
     @RequestMapping(value = "/addDeviceToUser", method = RequestMethod.POST)
-    public String addDeviceToUser(@Valid @ModelAttribute("device") Device device, BindingResult result, Map<String, Object> map) {
+    public String addDeviceToUser(@Valid @ModelAttribute("deviceDetails") Device device, BindingResult result, Map<String, Object> map) {
     	
     	System.err.println("adding device to user");
     	if (result.hasErrors()) {
@@ -95,4 +95,6 @@ public class PersonController {
         //personService.addPerson(person);
         return "redirect:/people/";
     }
+    
+    
 }
