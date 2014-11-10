@@ -102,7 +102,7 @@ public class PersonController {
     	if (result.hasErrors()) {
     		map.put("personDetails", person);
         	map.put("deviceDetails", new Device());
-    		return "addDeviceToUser";
+    		return "";
 		}
         //personService.addPerson(person);
     	device.setPerson(person);
