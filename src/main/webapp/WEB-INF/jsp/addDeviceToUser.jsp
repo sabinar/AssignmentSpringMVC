@@ -30,7 +30,7 @@
             <div class="page-header">
                 <h1>Add Device To User</h1>
             </div>
-            <form:form method="post" action="" commandName="personDetails" class="form-vertical">
+            <form:form method="get" action="" commandName="personDetails" class="form-vertical">
 				<table>
 					<tbody>
 						<tr>
@@ -45,20 +45,33 @@
 							<td><form:label path="email">Email</form:label></td>
 							<td><form:input path="email" value="${email}" readOnly="true" /></td>
 						</tr>
+								
+					</tbody>
+				</table>
+            </form:form>
+            
+             <form:form method="post" action="add" commandName="device" class="form-vertical">
+				<table>
+					<tbody>
+						<tr>
+							<td><form:label path="phoneNumber">Phone number</form:label></td>
+							<td><form:input path="phoneNumber" /></td>
+							<td><form:errors path="phoneNumber" cssClass="error" /></td>
+						</tr>
+							
+						<tr>
+							<td><form:label path="operatingSystem">Operating System</form:label></td>
+							<td><form:input path="operatingSystem" /></td>
+							<td><form:errors path="operatingSystem" cssClass="error" /></td>
+						</tr>
 						
 						<tr>
 							<td><input type="submit" value="Add Device" class="btn"/></td>
-							<td><a href="<c:url value='people' />">Back to User Listing</a></td>
-						</tr>		
+							<td><a href="<c:url value='backToUserListing' />">Back to User Listing</a></td>
+						</tr>
 					</tbody>
 				</table>
-                
-                                
-                
             </form:form>
-
-
-           
         </div>
     </div>
 </div>

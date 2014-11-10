@@ -68,6 +68,12 @@ public class PersonController {
     	return "redirect:/people/application/";
     }
     
+    
+    @RequestMapping("/backToUserListing")
+    public String redirectToUserListing() {
+    	return "redirect:/people/";
+    }
+    
     @RequestMapping(value = "/addDevices/{personId}", method = RequestMethod.GET)
     public String addDevicesByUser(@PathVariable("personId") Integer personId, Map<String, Object> map) {
     	
