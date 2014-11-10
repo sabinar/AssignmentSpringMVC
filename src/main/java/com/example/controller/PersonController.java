@@ -125,7 +125,7 @@ public class PersonController {
    
     
     @ExceptionHandler(DataIntegrityViolationException.class)
-    public String handleError() {
+    public String handleError(Map<String, Object> map) {
     	System.err.println("Catch exception");
     	return "";
 //    	Map<String, Object> map = new HashMap<String, Object>();
