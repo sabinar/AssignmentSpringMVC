@@ -43,7 +43,7 @@
 						</tr>
 						<tr>
 							<td><form:label path="">Device</form:label></td>
-							<td><form:select path="devices" multiple="true" size="8" items="${deviceListing}" ></form:select></td>
+							<td><form:select path="devices" multiple="true" size="8" items="${deviceListing}" itemValue="deviceId"></form:select></td>
 						</tr>
 						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
