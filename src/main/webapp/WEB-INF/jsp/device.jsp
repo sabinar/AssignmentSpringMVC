@@ -47,29 +47,28 @@
             	</tbody>
             </table>
             
-
             <c:if  test="${!empty deviceList}">
                 <h3>Devices</h3>
                 <table class="table table-bordered table-striped">
                     <thead>
-                    <tr>
-                        <th>Phone</th>
-                        <th>Operating System</th>
-                        <th>User Id</th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                    </tr>
+	                    <tr>
+	                        <th>Phone</th>
+	                        <th>Operating System</th>
+	                        <th>User Id</th>
+	                        <th>&nbsp;</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${deviceList}" var="device">
-                        <tr>
-                            <td>${device.phoneNumber}</td>
-                            <td>${device.operatingSystem}</td>
-                            <td>${device.person.userId} ${device.person.name}</td>
-                            <td><form action="delete/${device.deviceId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-                            <td><a href="<c:url value='getApplications/${device.deviceId}'/>">Display Apps</a></td>
-                        </tr>
-                    </c:forEach>
+	                    <c:forEach items="${deviceList}" var="device">
+	                        <tr>
+	                            <td>${device.phoneNumber}</td>
+	                            <td>${device.operatingSystem}</td>
+	                            <td>${device.person.userId} ${device.person.name}</td>
+	                            <td><form action="delete/${device.deviceId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+	                            <td><a href="<c:url value='getApplications/${device.deviceId}'/>">Display Apps</a></td>
+	                        </tr>
+	                    </c:forEach>
                     </tbody>
                 </table>
             </c:if>

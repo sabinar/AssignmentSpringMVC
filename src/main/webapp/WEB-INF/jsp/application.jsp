@@ -25,7 +25,6 @@
 			color: #ff0000;
 		}    
     </style>
-    
 </head>
 
 <body>
@@ -37,9 +36,6 @@
                 <h1>Application page</h1>
             </div>
             <form:form method="post" action="add" commandName="application" class="form-vertical">
-            	
-            	
-            
 				<table>
 					<tbody>
 						<tr>
@@ -58,9 +54,6 @@
 						</tr>		
 					</tbody>
 				</table>
-                
-                                
-                
             </form:form>
 
 
@@ -68,24 +61,24 @@
                 <h3>Applications</h3>
                 <table class="table table-bordered table-striped">
                     <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                    </tr>
+	                    <tr>
+	                        <th>ID</th>
+	                        <th>Name</th>
+	                        <th>Description</th>
+	                        <th>&nbsp;</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${applicationList}" var="application">
-                        <tr>
-                            <td>${application.appId}</td>
-                            <td>${application.appName}</td>
-                            <td>${application.appDesc}</td>
-                            <td><form action="delete/${application.appId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-                            <td><a href="<c:url value='addDevice/${application.appId}'/>">Add Device</a></td>
-                        </tr>
-                    </c:forEach>
+	                    <c:forEach items="${applicationList}" var="application">
+	                        <tr>
+	                            <td>${application.appId}</td>
+	                            <td>${application.appName}</td>
+	                            <td>${application.appDesc}</td>
+	                            <td><form action="delete/${application.appId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+	                            <td><a href="<c:url value='addDevice/${application.appId}'/>">Add Device</a></td>
+	                        </tr>
+	                    </c:forEach>
                     </tbody>
                 </table>
             </c:if>

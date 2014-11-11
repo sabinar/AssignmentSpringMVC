@@ -35,8 +35,8 @@
             <div class="page-header">
                 <h1>User Listing page</h1>
             </div>
-            <form:form method="post" action="add" commandName="person" class="form-vertical">
 
+            <form:form method="post" action="add" commandName="person" class="form-vertical">
 				<table>
 					<tbody>
 						<tr>
@@ -58,44 +58,40 @@
 						</tr>
 					</tbody>
 				</table>
-                
-                
             </form:form>
 
 			<form:errors path="*" cssClass="error" element="div">
-                    
-                  </form:errors>
+			</form:errors>
 			
             <c:if  test="${!empty peopleList}">
                 <h3>People</h3>
                 <table class="table table-bordered table-striped">
                     <thead>
-                    <tr>
-                    	<th>UserId</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                        <th>&nbsp;</th>
-                    </tr>
+	                    <tr>
+	                    	<th>UserId</th>
+	                        <th>Name</th>
+	                        <th>Email</th>
+	                        <th>&nbsp;</th>
+	                        <th>&nbsp;</th>
+	                        <th>&nbsp;</th>
+	                    </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${peopleList}" var="person">
-                        <tr>
-                        	<td>${person.userId} </td>
-                            <td>${person.name}</td>
-                            <td>${person.email}</td>
-                            <td><form action="delete/${person.userId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
-                            <td><a href="<c:url value='getDevices/${person.userId}'/>">Display</a></td>
-                            <td><a href="<c:url value='addDevices/${person.userId}'/>">Add Devices</a></td>
-                        </tr>
-                    </c:forEach>
+	                    <c:forEach items="${peopleList}" var="person">
+	                        <tr>
+	                        	<td>${person.userId} </td>
+	                            <td>${person.name}</td>
+	                            <td>${person.email}</td>
+	                            <td><form action="delete/${person.userId}" method="post"><input type="submit" class="btn btn-danger btn-mini" value="Delete"/></form></td>
+	                            <td><a href="<c:url value='getDevices/${person.userId}'/>">Display Devices</a></td>
+	                            <td><a href="<c:url value='addDevices/${person.userId}'/>">Add Devices</a></td>
+	                        </tr>
+	                    </c:forEach>
                     </tbody>
                 </table>
             </c:if>
         </div>
     </div>
 </div>
-
 </body>
 </html>

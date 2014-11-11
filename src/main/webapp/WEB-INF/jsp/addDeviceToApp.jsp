@@ -41,28 +41,19 @@
 							<td><form:label path="appDesc">Application Description</form:label></td>
 							<td><form:input path="appDesc" value="${appDetails.appDesc}" readOnly="true" /></td>
 						</tr>
-						
 						<tr>
 							<td><form:label path="">Device</form:label></td>
 							<td><form:select path="devices" multiple="true" items="${deviceListing}" itemLabel="phoneNumber" itemValue="deviceId" size=8/></td>
 						</tr>
-						
 						<tr>
 							<td><input type="submit" value="Add Application" class="btn"/></td>
 							<td><a href="<c:url value='backToapplication' />">Back to Application Page</a></td>
 						</tr>		
 					</tbody>
 				</table>
-                
-                                
-                
             </form:form>
-
-
-           
         </div>
     </div>
 </div>
-
 </body>
 </html>

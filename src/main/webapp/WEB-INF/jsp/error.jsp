@@ -49,11 +49,8 @@
             <form method=GET action="/people/">
             	<input type="submit" value="Back" class="btn"/>
             </form>
-
-            
         </div>
     </div>
 </div>
-
 </body>
 </html>
