@@ -22,6 +22,13 @@ import com.example.model.Device;
 import com.example.service.ApplicationService;
 import com.example.service.DeviceService;
 
+
+/**
+ * 
+ * Controller class for Application model
+ * @author sabina
+ *
+ */
 @Controller
 @RequestMapping("/application")
 public class ApplicationController {
@@ -36,7 +43,6 @@ public class ApplicationController {
 	
 	@RequestMapping("/")
     public String list(Map<String, Object> map) {
-    	
     	map.put("application", new Application());
         map.put("applicationList", applicationService.list());
         return "application";
@@ -44,15 +50,12 @@ public class ApplicationController {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
     public String addApplication(@Valid @ModelAttribute("application") Application application, BindingResult result, Map<String, Object> map) {
-
 		if (result.hasErrors()) {
 			map.put("applicationList", applicationService.list());
 			return "application";
 		}
-		else {
-			applicationService.add(application);
-			return "redirect:/people/application/";
-		}
+		applicationService.add(application);
+		return "redirect:/people/application/";
     }
 
     @RequestMapping("/delete/{appId}")
@@ -61,39 +64,18 @@ public class ApplicationController {
         return "redirect:/people/application/";
     }
     
-    
-    @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.GET)
-    public String addDevice(@PathVariable("appId") Integer appId, Map<String, Object> map) {
-
-    	deviceCache = new HashMap<Integer, Device>();
-    	List<Device> deviceListing = deviceService.listDevice();
-    		for (Device d : deviceListing) {
-       			deviceCache.put(d.getDeviceId(), d);    		
-        }
-    	
-    	//map.put("deviceListing", deviceCache);
-       	map.put("appDetails" , applicationService.getApp(appId));
-       	map.put("appId" , appId);
-    	map.put("deviceListing", deviceService.listDevice());
-    	    	
-    	return "addDeviceToApp";
-    }
-    
+    // Binder method used for displaying devices on application page
     @InitBinder
     public void initBinder(WebDataBinder binder) {
     	binder.registerCustomEditor(List.class, "devices", new CustomCollectionEditor(List.class) {
     		protected Object convertElement(Object element) {
-    			System.err.println("Inside binder "  + element.toString());
     			if (element instanceof String) {
-    				System.err.println("Element is String");
     				return deviceCache.get(Integer.valueOf(element.toString()));
     			}
     			if (element instanceof Integer) {
-    				System.err.println("Element is Integer");
     				return deviceCache.get(element);
     			}
     			if (element instanceof Device) {
-    				System.err.println("Element is device");
     				return element;
     			}
     			return null;
@@ -101,12 +83,24 @@ public class ApplicationController {
     	});
     }
     
+    @RequestMapping(value = "/addDevice/{appId}", method = RequestMethod.GET)
+    public String addDevice(@PathVariable("appId") Integer appId, Map<String, Object> map) {
+    	deviceCache = new HashMap<Integer, Device>();
+    	List<Device> deviceListing = deviceService.listDevice();
+    	// DeviceCache is used to check the type in order to display the device list on application page
+		for (Device d : deviceListing) {
+   			deviceCache.put(d.getDeviceId(), d);    		
+        }
+    	map.put("appDetails" , applicationService.getApp(appId));
+       	map.put("appId" , appId);
+    	map.put("deviceListing", deviceService.listDevice());
+    	return "addDeviceToApp";
+    }
+    
     @RequestMapping(value = "/addDevice/mapping/{appId}", method = RequestMethod.POST)
     public String addDevice(@ModelAttribute("appDetails") Application application, 
     		BindingResult result, @PathVariable("appId") Integer appId) {
-    	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>inside post method");
-    	System.err.println(application.getAppName() + ">>>" + application.getDevices().size() + ">>>" + application.getAppId() + ">>" + appId);
-    	
+    	System.err.println("Method that updates the application and device details");
     	applicationService.save(application);
         return "redirect:/people/application/";
     }

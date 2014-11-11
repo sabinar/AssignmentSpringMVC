@@ -11,10 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
+/**
+ * Class of Application model
+ * @author sabina
+ *
+ */
 @Entity
 public class Application {
 
@@ -62,8 +66,4 @@ public class Application {
 	public void setDevices(List<Device> devices) {
 		this.devices = devices;
 	}
-	
-	
-	
-	
 }

@@ -11,6 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.model.Application;
 
+
+/**
+ * Implementation of ApplicationService.java
+ * @author sabina
+ *
+ */
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
 
@@ -21,7 +27,6 @@ public class ApplicationServiceImpl implements ApplicationService {
 	@Transactional
 	public void add(Application application) {
 		em.persist(application);
-		
 	}
 
 	@Override
@@ -37,7 +42,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 	public void delete(Integer appId) {
 		Application application = em.find(Application.class, appId);
         if (null != application) {
-        	System.err.println(">>> deleting appl " + appId);
+        	System.err.println("Method to delete application: " + appId);
             em.remove(application);
         }		
 	}
@@ -45,16 +50,13 @@ public class ApplicationServiceImpl implements ApplicationService {
 	@Override
 	@Transactional
 	public Application getApp(Integer appId) {
-		
 		return em.find(Application.class, appId);
 	}
 	
 	@Override
 	@Transactional
 	public void save(Application application) {
-		System.err.println(">>>inside save>>" + application.getAppId());
+		System.err.println("Method to merge/save application");
 		em.merge(application);
-		System.err.println(">>>inside save>>after save>>>" + application.getAppId());
 	}
-
 }
