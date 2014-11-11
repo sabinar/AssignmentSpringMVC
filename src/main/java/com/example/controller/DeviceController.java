@@ -15,6 +15,11 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+/**
+ * Controller class for Device model
+ * @author sabina
+ *
+ */
 @Controller
 @RequestMapping("/device")
 public class DeviceController {
@@ -22,10 +27,8 @@ public class DeviceController {
     @Autowired
     private DeviceService deviceService;
     
-
     @RequestMapping("/")
     public String listDevice(Map<String, Object> map) {
-    	
     	map.put("device", new Device());
         map.put("deviceList", deviceService.listDevice());
         return "device";
@@ -43,33 +46,25 @@ public class DeviceController {
 
     @RequestMapping("/delete/{deviceId}")
     public String deleteDevice(@PathVariable("deviceId") Integer deviceId) {
-
         deviceService.removeDevice(deviceId);
-
         return "redirect:/people/device/";
     }
     
     @RequestMapping(value = "/getApplications/{deviceId}", method = RequestMethod.GET)
     public String getApplications(@PathVariable("deviceId") Integer deviceId, Map<String, Object> map) {
-    	
     	Device deviceDetails = deviceService.getDevice(deviceId);
-    	System.err.println(">>>Phone number>>>" + deviceDetails.getPhoneNumber());
     	map.put("deviceDetails", deviceDetails);
-    	
     	map.put("applicationList", deviceService.getApplicationsByDevice(deviceId));
     	return "appListPerDevice";
     }
     
     @RequestMapping("/people")
     public String redirectToUserPage() {
-    	System.err.println("---> Reached inside device page to redirect to User page");
     	return "redirect:/people/";
     }
     
     @RequestMapping("/getApplications/backToDeviceList")
     public String redirectToDeviceList() {
-    	System.err.println("---->>> Back to device list page");
-    	
     	return "redirect:/people/device/";
     }
     
@@ -77,7 +72,4 @@ public class DeviceController {
     public String redirectToApplicationList() {
     	return "redirect:/people/application/";
     }
-    
-    
-    
 }

@@ -11,8 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.model.Application;
 import com.example.model.Device;
-import com.example.model.Person;
 
+/**
+ * Implementation class for Device model
+ * @author sabina
+ *
+ */
 @Service
 public class DeviceServiceImpl implements DeviceService{
 	
@@ -28,7 +32,6 @@ public class DeviceServiceImpl implements DeviceService{
 	@Override
 	@Transactional
 	public List<Device> listDevice() {
-		System.err.println("--> Inside Listing Device");
 		CriteriaQuery<Device> c = em.getCriteriaBuilder().createQuery(Device.class);
         c.from(Device.class);
         return em.createQuery(c).getResultList();
@@ -43,6 +46,7 @@ public class DeviceServiceImpl implements DeviceService{
 	@Override
 	@Transactional
 	public void removeDevice(Integer id) {
+		System.err.println("Method for removing device " + id);
 		Device device = em.find(Device.class, id);
         if (null != device) {
             em.remove(device);
@@ -53,9 +57,8 @@ public class DeviceServiceImpl implements DeviceService{
 	@Transactional
 	public List<Application> getApplicationsByDevice(Integer deviceId) {
 		Device device = em.find(Device.class, deviceId);
-		
 		if (device != null) {
-			System.err.println("get application from device serr>>" + device.getApplications().size());
+			System.err.println("No. of applications from device: " + device.getApplications().size());
 			return device.getApplications();
 		}
 		return null;

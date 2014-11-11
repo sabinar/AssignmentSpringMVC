@@ -55,7 +55,6 @@ public class PersonServiceImpl implements PersonService {
     	Person p = getPerson(userId);
     	if (p != null) {
 	    	String str1 = "from Device as d where d.person.userId= " + p.getUserId();
-	    	System.err.println("--> Query >" + str1);
 	    	return (List<Device>)em.createQuery(str1).getResultList();
     	}
     	return null;

@@ -15,6 +15,13 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+/**
+ * Model object for Device.
+ * ManytoOne association with Person
+ * ManytoMany association with Applications
+ * @author sabina
+ *
+ */
 @Entity
 public class Device {
 
@@ -23,7 +30,7 @@ public class Device {
 	private Integer deviceId;
 	
 	@NotEmpty(message = "Please enter phone number")
-	@Pattern(regexp="[\\d]{10}", message = "Please enter valid phone number")
+	@Pattern(regexp="[\\d]{10}", message = "Please enter valid 10 digit phone number")
 	private String phoneNumber;
 	
 	@NotEmpty(message = "Please enter operating System")
@@ -62,7 +69,6 @@ public class Device {
 		this.operatingSystem = operatingSystem;
 	}
 
-
 	public Person getPerson() {
 		return person;
 	}
@@ -79,6 +85,7 @@ public class Device {
 		this.applications = applications;
 	}
 	
+	// Overriding equals and hashCode for displaying devices in application
 	@Override
 	public boolean equals(Object otherDevice) {
 		if (this == otherDevice)
